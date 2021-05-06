@@ -18,7 +18,7 @@ namespace ReadNPassWebAPI.AppServices.Concrete
 
         public async Task<CustomResponse<BookDetailViewModel>> AddBookDetail(BookDetailViewModel bookDetailWiewModel)
         {
-            int repsonse = _bookRepository.Add(_mapper.Map<Book>(bookViewModel));
+            int repsonse = _bookRepository.Add(_mapper.Map<Book>(bookDetailWiewModel));
             if (repsonse > 0)
             {
                 return new CustomResponse<BookDetailViewModel>(true, "Success");
@@ -36,7 +36,7 @@ namespace ReadNPassWebAPI.AppServices.Concrete
             return _mapper.Map<BookDetailViewModel>(_bookRepository.GetById(Id));
         }
 
-        public async Task<bool> RemoveBookDetail(Guid Id)
+        public async Task<CustomResponse<bool>> RemoveBookDetail(Guid Id)
         {
             int repsonse = _bookRepository.Delete(_mapper.Map<Book>(new Book() { Id = Id }));
             if (repsonse > 0)
@@ -48,7 +48,7 @@ namespace ReadNPassWebAPI.AppServices.Concrete
 
         public async Task<CustomResponse<BookDetailViewModel>> UpdateBookDetail(BookDetailViewModel bookDetailWiewModel)
         {
-            int repsonse = _bookRepository.Update(_mapper.Map<Book>(bookViewModel));
+            int repsonse = _bookRepository.Update(_mapper.Map<Book>(bookDetailWiewModel));
             if (repsonse > 0)
             {
                 return new CustomResponse<BookDetailViewModel>(true, "Success");

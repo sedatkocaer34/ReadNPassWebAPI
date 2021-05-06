@@ -25,7 +25,7 @@ namespace ReadNPassWebAPI.AppServices.Concrete
 
         public async Task<CustomResponse<BookPhotoViewModel>> AddUserLibrary(UserLibraryViewModel userLibraryViewModel)
         {
-            int repsonse = _bookRepository.Add(_mapper.Map<Book>(bookViewModel));
+            int repsonse = _bookRepository.Add(_mapper.Map<Book>(userLibraryViewModel));
             if (repsonse > 0)
             {
                 return new CustomResponse<BookPhotoViewModel>(true, "Success");
@@ -55,7 +55,7 @@ namespace ReadNPassWebAPI.AppServices.Concrete
 
         public async Task<CustomResponse<BookPhotoViewModel>> UpdateUserLibrary(UserLibraryViewModel userLibraryViewModel)
         {
-            int repsonse = _bookRepository.Update(_mapper.Map<Book>(bookViewModel));
+            int repsonse = _bookRepository.Update(_mapper.Map<Book>(userLibraryViewModel));
             if (repsonse > 0)
             {
                 return new CustomResponse<BookPhotoViewModel>(true, "Success");
