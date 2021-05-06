@@ -1,25 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sedat\\source\\repos\\ReadNPassWebAPI\\ReadNPassWebAPI.Core\\ReadNPassWebAPI.Core.csproj": {}
+    "C:\\donemProjesi\\ReadNPassWebAPI\\ReadNPassWebAPI.Core\\ReadNPassWebAPI.Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sedat\\source\\repos\\ReadNPassWebAPI\\ReadNPassWebAPI.Core\\ReadNPassWebAPI.Core.csproj": {
+    "C:\\donemProjesi\\ReadNPassWebAPI\\ReadNPassWebAPI.Core\\ReadNPassWebAPI.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sedat\\source\\repos\\ReadNPassWebAPI\\ReadNPassWebAPI.Core\\ReadNPassWebAPI.Core.csproj",
+        "projectUniqueName": "C:\\donemProjesi\\ReadNPassWebAPI\\ReadNPassWebAPI.Core\\ReadNPassWebAPI.Core.csproj",
         "projectName": "ReadNPassWebAPI.Core",
-        "projectPath": "C:\\Users\\sedat\\source\\repos\\ReadNPassWebAPI\\ReadNPassWebAPI.Core\\ReadNPassWebAPI.Core.csproj",
-        "packagesPath": "C:\\Users\\sedat\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sedat\\source\\repos\\ReadNPassWebAPI\\ReadNPassWebAPI.Core\\obj\\",
+        "projectPath": "C:\\donemProjesi\\ReadNPassWebAPI\\ReadNPassWebAPI.Core\\ReadNPassWebAPI.Core.csproj",
+        "packagesPath": "C:\\Users\\aygun\\.nuget\\packages\\",
+        "outputPath": "C:\\donemProjesi\\ReadNPassWebAPI\\ReadNPassWebAPI.Core\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\sedat\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\aygun\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -64,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

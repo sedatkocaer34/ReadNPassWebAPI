@@ -1,40 +1,66 @@
-﻿using ReadNPassWebAPI.AppServices.Interfaces;
+﻿using AutoMapper;
+using ReadNPassWebAPI.AppServices.Interfaces;
 using ReadNPassWebAPI.AppServices.ViewModels;
 using ReadNPassWebAPI.Core.Response;
+using ReadNPassWebAPI.Data.Interfaces;
+using ReadNPassWebAPI.Domain.Entity;
 using System;
 using System.Collections.Generic;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace ReadNPassWebAPI.AppServices.Concrete
 {
     public class BookClaimService : IBookClaimService
     {
-       
-        
 
-        public Task<CustomResponse<BookClaimViewModel>> AddBookClaim(BookClaimViewModel bookClaimViewModel)
+        private IBookRepository _bookRepository;
+        private IMapper _mapper;
+
+        public BookClaimService(IBookRepository bookRepository, IMapper mapper)
         {
-            throw new NotImplementedException();
+            this._bookRepository = bookRepository;
+            this._mapper = mapper;
         }
 
-        public Task<IEnumerable<BookClaimViewModel>> GetAll()
+        public async Task<CustomResponse<BookClaimViewModel>> AddBookClaim(BookClaimViewModel bookClaimViewModel)
         {
-            throw new NotImplementedException();
+            int repsonse = _bookRepository.Add(_mapper.Map<Book>(bookClaimViewModel));
+            if (repsonse > 0)
+            {
+                return new CustomResponse<BookClaimViewModel>(true, "Success");
+            }
+            return new CustomResponse<BookClaimViewModel>(true, "Error");
         }
 
-        public Task<BookClaimViewModel> GetById(Guid Id)
+        public async Task<IEnumerable<BookClaimViewModel>> GetAll()
         {
-            throw new NotImplementedException();
+            return _mapper.Map<List<BookClaimViewModel>>(_bookRepository.GetList());
         }
 
-        public Task<CustomResponse<bool>> RemoveBookClaim(Guid Id)
+        public async Task<BookClaimViewModel> GetById(Guid Id)
         {
-            throw new NotImplementedException();
+            return _mapper.Map<BookClaimViewModel>(_bookRepository.GetById(Id));
         }
 
-        public Task<CustomResponse<BookClaimViewModel>> UpdateBookClaim(BookClaimViewModel bookClaimViewModel)
+        public async Task<CustomResponse<bool>> RemoveBookClaim(Guid Id)
         {
-            throw new NotImplementedException();
+            int repsonse = _bookRepository.Delete(_mapper.Map<Book>(new Book() { Id = Id }));
+            if (repsonse > 0)
+            {
+                return new CustomResponse<bool>(true, "Success");
+            }
+            return new CustomResponse<bool>(true, "Error");
+        }
+
+        public async Task<CustomResponse<BookClaimViewModel>> UpdateBookClaim(BookClaimViewModel bookClaimViewModel)
+        {
+            int repsonse = _bookRepository.Update(_mapper.Map<Book>(bookClaimViewModel));
+            if (repsonse > 0)
+            {
+                return new CustomResponse<BookClaimViewModel>(true, "Success");
+            }
+            return new CustomResponse<BookClaimViewModel>(true, "Error");
         }
     }
 }

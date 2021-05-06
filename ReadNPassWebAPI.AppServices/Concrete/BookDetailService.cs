@@ -1,6 +1,9 @@
-﻿using ReadNPassWebAPI.AppServices.Interfaces;
+﻿using AutoMapper;
+using ReadNPassWebAPI.AppServices.Interfaces;
 using ReadNPassWebAPI.AppServices.ViewModels;
 using ReadNPassWebAPI.Core.Response;
+using ReadNPassWebAPI.Data.Interfaces;
+using ReadNPassWebAPI.Domain.Entity;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,29 +13,47 @@ namespace ReadNPassWebAPI.AppServices.Concrete
 {
     public class BookDetailService : IBookDetailService
     {
-        public Task<CustomResponse<BookDetailViewModel>> AddBookDetail(BookDetailViewModel bookDetailWiewModel)
+        private IBookRepository _bookRepository;
+        private IMapper _mapper;
+
+        public async Task<CustomResponse<BookDetailViewModel>> AddBookDetail(BookDetailViewModel bookDetailWiewModel)
         {
-            throw new NotImplementedException();
+            int repsonse = _bookRepository.Add(_mapper.Map<Book>(bookDetailWiewModel));
+            if (repsonse > 0)
+            {
+                return new CustomResponse<BookDetailViewModel>(true, "Success");
+            }
+            return new CustomResponse<BookDetailViewModel>(true, "Error");
         }
 
-        public Task<IEnumerable<BookDetailViewModel>> GetAll()
+        public async Task<IEnumerable<BookDetailViewModel>> GetAll()
         {
-            throw new NotImplementedException();
+            return _mapper.Map<List<BookDetailViewModel>>(_bookRepository.GetList());
         }
 
-        public Task<BookDetailViewModel> GetById(Guid Id)
+        public async Task<BookDetailViewModel> GetById(Guid Id)
         {
-            throw new NotImplementedException();
+            return _mapper.Map<BookDetailViewModel>(_bookRepository.GetById(Id));
         }
 
-        public Task<bool> RemoveBookDetail(Guid Id)
+        public async Task<CustomResponse<bool>> RemoveBookDetail(Guid Id)
         {
-            throw new NotImplementedException();
+            int repsonse = _bookRepository.Delete(_mapper.Map<Book>(new Book() { Id = Id }));
+            if (repsonse > 0)
+            {
+                return new CustomResponse<bool>(true, "Success");
+            }
+            return new CustomResponse<bool>(true, "Error");
         }
 
-        public Task<CustomResponse<BookDetailViewModel>> UpdateBookDetail(BookDetailViewModel bookDetailWiewModel)
+        public async Task<CustomResponse<BookDetailViewModel>> UpdateBookDetail(BookDetailViewModel bookDetailWiewModel)
         {
-            throw new NotImplementedException();
+            int repsonse = _bookRepository.Update(_mapper.Map<Book>(bookDetailWiewModel));
+            if (repsonse > 0)
+            {
+                return new CustomResponse<BookDetailViewModel>(true, "Success");
+            }
+            return new CustomResponse<BookDetailViewModel>(true, "Error");
         }
     }
 }

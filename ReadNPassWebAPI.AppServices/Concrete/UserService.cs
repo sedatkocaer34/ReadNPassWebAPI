@@ -1,6 +1,9 @@
-﻿using ReadNPassWebAPI.AppServices.Interfaces;
+﻿using AutoMapper;
+using ReadNPassWebAPI.AppServices.Interfaces;
 using ReadNPassWebAPI.AppServices.ViewModels;
 using ReadNPassWebAPI.Core.Response;
+using ReadNPassWebAPI.Data.Interfaces;
+using ReadNPassWebAPI.Domain.Entity;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,29 +13,54 @@ namespace ReadNPassWebAPI.AppServices.Concrete
 {
     public class UserService : IUserService
     {
-        public Task<CustomResponse<BookPhotoViewModel>> AddUser(UserViewModel userViewModel)
+
+        private IBookRepository _bookRepository;
+        private IMapper _mapper;
+
+        public UserService(IBookRepository bookRepository, IMapper mapper)
         {
-            throw new NotImplementedException();
+            this._bookRepository = bookRepository;
+            this._mapper = mapper;
         }
 
-        public Task<IEnumerable<UserViewModel>> GetAll()
+        public async Task<CustomResponse<BookPhotoViewModel>> AddUser(UserViewModel userViewModel)
         {
-            throw new NotImplementedException();
+            int repsonse = _bookRepository.Add(_mapper.Map<Book>(userViewModel));
+            if (repsonse > 0)
+            {
+                return new CustomResponse<BookPhotoViewModel>(true, "Success");
+            }
+            return new CustomResponse<BookPhotoViewModel>(true, "Error");
         }
 
-        public Task<UserViewModel> GetById(Guid Id)
+        public async Task<IEnumerable<UserViewModel>> GetAll()
         {
-            throw new NotImplementedException();
+            return _mapper.Map<List<UserViewModel>>(_bookRepository.GetList());
         }
 
-        public Task<CustomResponse<bool>> RemoveUser(Guid Id)
+        public async Task<UserViewModel> GetById(Guid Id)
         {
-            throw new NotImplementedException();
+            return _mapper.Map<UserViewModel>(_bookRepository.GetById(Id));
         }
 
-        public Task<CustomResponse<BookPhotoViewModel>> UpdateUser(UserViewModel userViewModel)
+        public async Task<CustomResponse<bool>> RemoveUser(Guid Id)
         {
-            throw new NotImplementedException();
+            int repsonse = _bookRepository.Delete(_mapper.Map<Book>(new Book() { Id = Id }));
+            if (repsonse > 0)
+            {
+                return new CustomResponse<bool>(true, "Success");
+            }
+            return new CustomResponse<bool>(true, "Error");
+        }
+
+        public async Task<CustomResponse<BookPhotoViewModel>> UpdateUser(UserViewModel userViewModel)
+        {
+            int repsonse = _bookRepository.Update(_mapper.Map<Book>(userViewModel));
+            if (repsonse > 0)
+            {
+                return new CustomResponse<BookPhotoViewModel>(true, "Success");
+            }
+            return new CustomResponse<BookPhotoViewModel>(true, "Error");
         }
     }
 }
