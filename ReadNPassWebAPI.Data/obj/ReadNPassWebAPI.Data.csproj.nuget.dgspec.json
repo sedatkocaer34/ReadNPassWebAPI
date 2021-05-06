@@ -1,31 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sedat\\source\\repos\\ReadNPassWebAPI\\ReadNPassWebAPI.Data\\ReadNPassWebAPI.Data.csproj": {}
+    "/Users/fatihberkcebeci/Desktop/donemproje/ReadNPassWebAPI/ReadNPassWebAPI.Data/ReadNPassWebAPI.Data.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sedat\\source\\repos\\ReadNPassWebAPI\\ReadNPassWebAPI.Core\\ReadNPassWebAPI.Core.csproj": {
+    "/Users/fatihberkcebeci/Desktop/donemproje/ReadNPassWebAPI/ReadNPassWebAPI.Core/ReadNPassWebAPI.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sedat\\source\\repos\\ReadNPassWebAPI\\ReadNPassWebAPI.Core\\ReadNPassWebAPI.Core.csproj",
+        "projectUniqueName": "/Users/fatihberkcebeci/Desktop/donemproje/ReadNPassWebAPI/ReadNPassWebAPI.Core/ReadNPassWebAPI.Core.csproj",
         "projectName": "ReadNPassWebAPI.Core",
-        "projectPath": "C:\\Users\\sedat\\source\\repos\\ReadNPassWebAPI\\ReadNPassWebAPI.Core\\ReadNPassWebAPI.Core.csproj",
-        "packagesPath": "C:\\Users\\sedat\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sedat\\source\\repos\\ReadNPassWebAPI\\ReadNPassWebAPI.Core\\obj\\",
+        "projectPath": "/Users/fatihberkcebeci/Desktop/donemproje/ReadNPassWebAPI/ReadNPassWebAPI.Core/ReadNPassWebAPI.Core.csproj",
+        "packagesPath": "/Users/fatihberkcebeci/.nuget/packages/",
+        "outputPath": "/Users/fatihberkcebeci/Desktop/donemproje/ReadNPassWebAPI/ReadNPassWebAPI.Core/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\sedat\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "/Users/fatihberkcebeci/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -64,43 +58,37 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.202/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\sedat\\source\\repos\\ReadNPassWebAPI\\ReadNPassWebAPI.Data\\ReadNPassWebAPI.Data.csproj": {
+    "/Users/fatihberkcebeci/Desktop/donemproje/ReadNPassWebAPI/ReadNPassWebAPI.Data/ReadNPassWebAPI.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sedat\\source\\repos\\ReadNPassWebAPI\\ReadNPassWebAPI.Data\\ReadNPassWebAPI.Data.csproj",
+        "projectUniqueName": "/Users/fatihberkcebeci/Desktop/donemproje/ReadNPassWebAPI/ReadNPassWebAPI.Data/ReadNPassWebAPI.Data.csproj",
         "projectName": "ReadNPassWebAPI.Data",
-        "projectPath": "C:\\Users\\sedat\\source\\repos\\ReadNPassWebAPI\\ReadNPassWebAPI.Data\\ReadNPassWebAPI.Data.csproj",
-        "packagesPath": "C:\\Users\\sedat\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sedat\\source\\repos\\ReadNPassWebAPI\\ReadNPassWebAPI.Data\\obj\\",
+        "projectPath": "/Users/fatihberkcebeci/Desktop/donemproje/ReadNPassWebAPI/ReadNPassWebAPI.Data/ReadNPassWebAPI.Data.csproj",
+        "packagesPath": "/Users/fatihberkcebeci/.nuget/packages/",
+        "outputPath": "/Users/fatihberkcebeci/Desktop/donemproje/ReadNPassWebAPI/ReadNPassWebAPI.Data/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\sedat\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "/Users/fatihberkcebeci/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\sedat\\source\\repos\\ReadNPassWebAPI\\ReadNPassWebAPI.Core\\ReadNPassWebAPI.Core.csproj": {
-                "projectPath": "C:\\Users\\sedat\\source\\repos\\ReadNPassWebAPI\\ReadNPassWebAPI.Core\\ReadNPassWebAPI.Core.csproj"
+              "/Users/fatihberkcebeci/Desktop/donemproje/ReadNPassWebAPI/ReadNPassWebAPI.Core/ReadNPassWebAPI.Core.csproj": {
+                "projectPath": "/Users/fatihberkcebeci/Desktop/donemproje/ReadNPassWebAPI/ReadNPassWebAPI.Core/ReadNPassWebAPI.Core.csproj"
               },
-              "C:\\Users\\sedat\\source\\repos\\ReadNPassWebAPI\\ReadNPassWebAPI.Domain\\ReadNPassWebAPI.Domain.csproj": {
-                "projectPath": "C:\\Users\\sedat\\source\\repos\\ReadNPassWebAPI\\ReadNPassWebAPI.Domain\\ReadNPassWebAPI.Domain.csproj"
+              "/Users/fatihberkcebeci/Desktop/donemproje/ReadNPassWebAPI/ReadNPassWebAPI.Domain/ReadNPassWebAPI.Domain.csproj": {
+                "projectPath": "/Users/fatihberkcebeci/Desktop/donemproje/ReadNPassWebAPI/ReadNPassWebAPI.Domain/ReadNPassWebAPI.Domain.csproj"
               }
             }
           }
@@ -129,40 +117,34 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.202/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\sedat\\source\\repos\\ReadNPassWebAPI\\ReadNPassWebAPI.Domain\\ReadNPassWebAPI.Domain.csproj": {
+    "/Users/fatihberkcebeci/Desktop/donemproje/ReadNPassWebAPI/ReadNPassWebAPI.Domain/ReadNPassWebAPI.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sedat\\source\\repos\\ReadNPassWebAPI\\ReadNPassWebAPI.Domain\\ReadNPassWebAPI.Domain.csproj",
+        "projectUniqueName": "/Users/fatihberkcebeci/Desktop/donemproje/ReadNPassWebAPI/ReadNPassWebAPI.Domain/ReadNPassWebAPI.Domain.csproj",
         "projectName": "ReadNPassWebAPI.Domain",
-        "projectPath": "C:\\Users\\sedat\\source\\repos\\ReadNPassWebAPI\\ReadNPassWebAPI.Domain\\ReadNPassWebAPI.Domain.csproj",
-        "packagesPath": "C:\\Users\\sedat\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sedat\\source\\repos\\ReadNPassWebAPI\\ReadNPassWebAPI.Domain\\obj\\",
+        "projectPath": "/Users/fatihberkcebeci/Desktop/donemproje/ReadNPassWebAPI/ReadNPassWebAPI.Domain/ReadNPassWebAPI.Domain.csproj",
+        "packagesPath": "/Users/fatihberkcebeci/.nuget/packages/",
+        "outputPath": "/Users/fatihberkcebeci/Desktop/donemproje/ReadNPassWebAPI/ReadNPassWebAPI.Domain/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\sedat\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "/Users/fatihberkcebeci/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\sedat\\source\\repos\\ReadNPassWebAPI\\ReadNPassWebAPI.Core\\ReadNPassWebAPI.Core.csproj": {
-                "projectPath": "C:\\Users\\sedat\\source\\repos\\ReadNPassWebAPI\\ReadNPassWebAPI.Core\\ReadNPassWebAPI.Core.csproj"
+              "/Users/fatihberkcebeci/Desktop/donemproje/ReadNPassWebAPI/ReadNPassWebAPI.Core/ReadNPassWebAPI.Core.csproj": {
+                "projectPath": "/Users/fatihberkcebeci/Desktop/donemproje/ReadNPassWebAPI/ReadNPassWebAPI.Core/ReadNPassWebAPI.Core.csproj"
               }
             }
           }
@@ -191,7 +173,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.202/RuntimeIdentifierGraph.json"
         }
       }
     }
