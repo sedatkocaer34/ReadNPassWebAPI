@@ -12,9 +12,10 @@ namespace ReadNPassWebAPI.Domain.Entity
         public DateTime BookUpdateDate { get;private set; }
         public Guid UserLibraryId { get; private set; }
 
-        public virtual List<BookDetail> BookDetail { get; set; }
+        public virtual BookDetail BookDetail { get; set; }
         public virtual List<BookClaim> BookClaims { get; set; }
         public virtual List<BookPhoto> BookPhotos { get; set; }
         public virtual UserLibrary UserLibrary { get; set; }
+        public virtual User User { get; set; }
     }
 }

@@ -10,5 +10,6 @@ namespace ReadNPassWebAPI.Data.Concrete
 {
     public class UserLibraryRepository : RepositoryBase<UserLibrary, ReadNPassWebAPIDataContext>, IUserLibraryRepository
     {
+       
     }
 }

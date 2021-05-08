@@ -14,18 +14,18 @@ namespace ReadNPassWebAPI.AppServices.Concrete
     public class BookPhotoService : IBookPhotoService
     {
 
-        private IBookRepository _bookRepository;
+        private IBookPhotoRepository _bookPhotoRepository;
         private IMapper _mapper;
 
-        public BookPhotoService(IBookRepository bookRepository, IMapper mapper)
+        public BookPhotoService(IBookPhotoRepository bookPhotoRepository, IMapper mapper)
         {
-            this._bookRepository = bookRepository;
+            this._bookPhotoRepository = bookPhotoRepository;
             this._mapper = mapper;
         }
 
         public async Task<CustomResponse<BookPhotoViewModel>> AddBookPhoto(BookPhotoViewModel bookPhotoViewModel)
         {
-            int repsonse = _bookRepository.Add(_mapper.Map<Book>(bookPhotoViewModel));
+            int repsonse = _bookPhotoRepository.Add(_mapper.Map<BookPhoto>(bookPhotoViewModel));
             if (repsonse > 0)
             {
                 return new CustomResponse<BookPhotoViewModel>(true, "Success");
@@ -35,17 +35,17 @@ namespace ReadNPassWebAPI.AppServices.Concrete
 
         public async Task<IEnumerable<BookPhotoViewModel>> GetAll()
         {
-            return _mapper.Map<List<BookPhotoViewModel>>(_bookRepository.GetList());
+            return _mapper.Map<List<BookPhotoViewModel>>(_bookPhotoRepository.GetList());
         }
 
         public async Task<BookPhotoViewModel> GetById(Guid Id)
         {
-            return _mapper.Map<BookPhotoViewModel>(_bookRepository.GetById(Id));
+            return _mapper.Map<BookPhotoViewModel>(_bookPhotoRepository.GetById(Id));
         }
 
         public async Task<CustomResponse<bool>> RemoveBookPhoto(Guid Id)
         {
-            int repsonse = _bookRepository.Delete(_mapper.Map<Book>(new Book() { Id = Id }));
+            int repsonse = _bookPhotoRepository.Delete(_mapper.Map<BookPhoto>(new BookPhoto() { Id = Id }));
             if (repsonse > 0)
             {
                 return new CustomResponse<bool>(true, "Success");
@@ -55,7 +55,7 @@ namespace ReadNPassWebAPI.AppServices.Concrete
 
         public async Task<CustomResponse<BookPhotoViewModel>> UpdateBookPhoto(BookPhotoViewModel bookPhotoViewModel)
         {
-            int repsonse = _bookRepository.Update(_mapper.Map<Book>(bookPhotoViewModel));
+            int repsonse = _bookPhotoRepository.Update(_mapper.Map<BookPhoto>(bookPhotoViewModel));
             if (repsonse > 0)
             {
                 return new CustomResponse<BookPhotoViewModel>(true, "Success");

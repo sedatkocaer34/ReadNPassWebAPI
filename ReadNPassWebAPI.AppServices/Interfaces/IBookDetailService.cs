@@ -13,6 +13,6 @@ namespace ReadNPassWebAPI.AppServices.Interfaces
         Task<BookDetailViewModel> GetById(Guid Id);
         Task<CustomResponse<BookDetailViewModel>> AddBookDetail(BookDetailViewModel bookDetailWiewModel);
         Task<CustomResponse<BookDetailViewModel>> UpdateBookDetail(BookDetailViewModel bookDetailWiewModel);
-        Task<bool> RemoveBookDetail(Guid Id);
+        Task<CustomResponse<bool>> RemoveBookDetail(Guid Id);
     }
 }

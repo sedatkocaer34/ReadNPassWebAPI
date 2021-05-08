@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -33,17 +34,27 @@ namespace ReadNPassWebAPI
             services.AddControllers();
 
             services.AddScoped<IBookClaimService,BookClaimService>();
-            services.AddScoped<IBookRepository, BookRepository>();
+            services.AddScoped<IBookClaimRepository, BookClaimRepository>();
 
             services.AddScoped<IBookDetailService, BookDetailService>();
+            services.AddScoped<IBookDetailRepository, BookDetailRepository>();
+
             services.AddScoped<IBookPhotoService, BookPhotoService>();
+            services.AddScoped<IBookPhotoRepository, BookPhotoRepository>();
 
             services.AddScoped<IBookService, BookService>();
             services.AddScoped<IBookRepository, BookRepository>();
 
+
             services.AddScoped<IUserLibraryService, UserLibraryService>();
+            services.AddScoped<IUserLibraryRepository, UserLibraryRepository>();
+
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IUserRepository, UserRepository>();
+
             services.AddScoped<ReadNPassWebAPIDataContext>();
+
+            services.AddDbContext<ReadNPassWebAPIDataContext>(options => options.UseSqlServer("DefaultConnection"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

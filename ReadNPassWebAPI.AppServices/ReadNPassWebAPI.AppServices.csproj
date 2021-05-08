@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ReadNPassWebAPI.Core\ReadNPassWebAPI.Core.csproj" />
     <ProjectReference Include="..\ReadNPassWebAPI.Data\ReadNPassWebAPI.Data.csproj" />
     <ProjectReference Include="..\ReadNPassWebAPI.Domain\ReadNPassWebAPI.Domain.csproj" />
   </ItemGroup>

@@ -1,0 +1,16 @@
+C:\Users\sedat\source\repos\ReadNPassWebAPI\ReadNPassWebAPI.AppServices\obj\Debug\netcoreapp3.1\ReadNPassWebAPI.AppServices.csprojAssemblyReference.cache
+C:\Users\sedat\source\repos\ReadNPassWebAPI\ReadNPassWebAPI.AppServices\obj\Debug\netcoreapp3.1\ReadNPassWebAPI.AppServices.AssemblyInfoInputs.cache
+C:\Users\sedat\source\repos\ReadNPassWebAPI\ReadNPassWebAPI.AppServices\obj\Debug\netcoreapp3.1\ReadNPassWebAPI.AppServices.AssemblyInfo.cs
+C:\Users\sedat\source\repos\ReadNPassWebAPI\ReadNPassWebAPI.AppServices\obj\Debug\netcoreapp3.1\ReadNPassWebAPI.AppServices.csproj.CoreCompileInputs.cache
+C:\Users\sedat\source\repos\ReadNPassWebAPI\ReadNPassWebAPI.AppServices\bin\Debug\netcoreapp3.1\ReadNPassWebAPI.AppServices.deps.json
+C:\Users\sedat\source\repos\ReadNPassWebAPI\ReadNPassWebAPI.AppServices\bin\Debug\netcoreapp3.1\ReadNPassWebAPI.AppServices.dll
+C:\Users\sedat\source\repos\ReadNPassWebAPI\ReadNPassWebAPI.AppServices\bin\Debug\netcoreapp3.1\ReadNPassWebAPI.AppServices.pdb
+C:\Users\sedat\source\repos\ReadNPassWebAPI\ReadNPassWebAPI.AppServices\bin\Debug\netcoreapp3.1\ReadNPassWebAPI.Core.dll
+C:\Users\sedat\source\repos\ReadNPassWebAPI\ReadNPassWebAPI.AppServices\bin\Debug\netcoreapp3.1\ReadNPassWebAPI.Data.dll
+C:\Users\sedat\source\repos\ReadNPassWebAPI\ReadNPassWebAPI.AppServices\bin\Debug\netcoreapp3.1\ReadNPassWebAPI.Domain.dll
+C:\Users\sedat\source\repos\ReadNPassWebAPI\ReadNPassWebAPI.AppServices\bin\Debug\netcoreapp3.1\ReadNPassWebAPI.Core.pdb
+C:\Users\sedat\source\repos\ReadNPassWebAPI\ReadNPassWebAPI.AppServices\bin\Debug\netcoreapp3.1\ReadNPassWebAPI.Data.pdb
+C:\Users\sedat\source\repos\ReadNPassWebAPI\ReadNPassWebAPI.AppServices\bin\Debug\netcoreapp3.1\ReadNPassWebAPI.Domain.pdb
+C:\Users\sedat\source\repos\ReadNPassWebAPI\ReadNPassWebAPI.AppServices\obj\Debug\netcoreapp3.1\ReadNPassWebAPI.AppServices.csproj.CopyComplete
+C:\Users\sedat\source\repos\ReadNPassWebAPI\ReadNPassWebAPI.AppServices\obj\Debug\netcoreapp3.1\ReadNPassWebAPI.AppServices.dll
+C:\Users\sedat\source\repos\ReadNPassWebAPI\ReadNPassWebAPI.AppServices\obj\Debug\netcoreapp3.1\ReadNPassWebAPI.AppServices.pdb

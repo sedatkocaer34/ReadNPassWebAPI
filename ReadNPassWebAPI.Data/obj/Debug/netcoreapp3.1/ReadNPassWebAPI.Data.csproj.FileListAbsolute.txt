@@ -1,0 +1,17 @@
+C:\Users\sedat\source\repos\ReadNPassWebAPI\ReadNPassWebAPI.Data\bin\Debug\netcoreapp3.1\ReadNPassWebAPI.Core.dll
+C:\Users\sedat\source\repos\ReadNPassWebAPI\ReadNPassWebAPI.Data\bin\Debug\netcoreapp3.1\ReadNPassWebAPI.Domain.dll
+C:\Users\sedat\source\repos\ReadNPassWebAPI\ReadNPassWebAPI.Data\obj\Debug\netcoreapp3.1\ReadNPassWebAPI.Data.csprojAssemblyReference.cache
+C:\Users\sedat\source\repos\ReadNPassWebAPI\ReadNPassWebAPI.Data\obj\Debug\netcoreapp3.1\ReadNPassWebAPI.Data.AssemblyInfoInputs.cache
+C:\Users\sedat\source\repos\ReadNPassWebAPI\ReadNPassWebAPI.Data\obj\Debug\netcoreapp3.1\ReadNPassWebAPI.Data.AssemblyInfo.cs
+C:\Users\sedat\source\repos\ReadNPassWebAPI\ReadNPassWebAPI.Data\obj\Debug\netcoreapp3.1\ReadNPassWebAPI.Data.csproj.CoreCompileInputs.cache
+C:\Users\sedat\source\repos\ReadNPassWebAPI\ReadNPassWebAPI.Data\bin\Debug\netcoreapp3.1\ReadNPassWebAPI.Data.deps.json
+C:\Users\sedat\source\repos\ReadNPassWebAPI\ReadNPassWebAPI.Data\bin\Debug\netcoreapp3.1\ReadNPassWebAPI.Data.dll
+C:\Users\sedat\source\repos\ReadNPassWebAPI\ReadNPassWebAPI.Data\bin\Debug\netcoreapp3.1\ReadNPassWebAPI.Data.pdb
+C:\Users\sedat\source\repos\ReadNPassWebAPI\ReadNPassWebAPI.Data\bin\Debug\netcoreapp3.1\ReadNPassWebAPI.Core.pdb
+C:\Users\sedat\source\repos\ReadNPassWebAPI\ReadNPassWebAPI.Data\bin\Debug\netcoreapp3.1\ReadNPassWebAPI.Domain.pdb
+C:\Users\sedat\source\repos\ReadNPassWebAPI\ReadNPassWebAPI.Data\obj\Debug\netcoreapp3.1\ReadNPassWebAPI.Data.csproj.CopyComplete
+C:\Users\sedat\source\repos\ReadNPassWebAPI\ReadNPassWebAPI.Data\obj\Debug\netcoreapp3.1\ReadNPassWebAPI.Data.dll
+C:\Users\sedat\source\repos\ReadNPassWebAPI\ReadNPassWebAPI.Data\obj\Debug\netcoreapp3.1\ReadNPassWebAPI.Data.pdb
+C:\Users\sedat\source\repos\ReadNPassWebAPI\ReadNPassWebAPI.Data\bin\Debug\netcoreapp3.1\ReadNPassWebAPI.Data.runtimeconfig.json
+C:\Users\sedat\source\repos\ReadNPassWebAPI\ReadNPassWebAPI.Data\bin\Debug\netcoreapp3.1\ReadNPassWebAPI.Data.runtimeconfig.dev.json
+C:\Users\sedat\source\repos\ReadNPassWebAPI\ReadNPassWebAPI.Data\obj\Debug\netcoreapp3.1\ReadNPassWebAPI.Data.genruntimeconfig.cache

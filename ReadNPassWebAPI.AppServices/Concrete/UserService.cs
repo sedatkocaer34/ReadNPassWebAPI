@@ -14,18 +14,18 @@ namespace ReadNPassWebAPI.AppServices.Concrete
     public class UserService : IUserService
     {
 
-        private IBookRepository _bookRepository;
+        private IUserRepository _userRepository;
         private IMapper _mapper;
 
-        public UserService(IBookRepository bookRepository, IMapper mapper)
+        public UserService(IUserRepository userRepository, IMapper mapper)
         {
-            this._bookRepository = bookRepository;
+            this._userRepository = userRepository;
             this._mapper = mapper;
         }
 
         public async Task<CustomResponse<BookPhotoViewModel>> AddUser(UserViewModel userViewModel)
         {
-            int repsonse = _bookRepository.Add(_mapper.Map<Book>(userViewModel));
+            int repsonse = _userRepository.Add(_mapper.Map<User>(userViewModel));
             if (repsonse > 0)
             {
                 return new CustomResponse<BookPhotoViewModel>(true, "Success");
@@ -35,17 +35,17 @@ namespace ReadNPassWebAPI.AppServices.Concrete
 
         public async Task<IEnumerable<UserViewModel>> GetAll()
         {
-            return _mapper.Map<List<UserViewModel>>(_bookRepository.GetList());
+            return _mapper.Map<List<UserViewModel>>(_userRepository.GetList());
         }
 
         public async Task<UserViewModel> GetById(Guid Id)
         {
-            return _mapper.Map<UserViewModel>(_bookRepository.GetById(Id));
+            return _mapper.Map<UserViewModel>(_userRepository.GetById(Id));
         }
 
         public async Task<CustomResponse<bool>> RemoveUser(Guid Id)
         {
-            int repsonse = _bookRepository.Delete(_mapper.Map<Book>(new Book() { Id = Id }));
+            int repsonse = _userRepository.Delete(_mapper.Map<User>(new User() { Id = Id }));
             if (repsonse > 0)
             {
                 return new CustomResponse<bool>(true, "Success");
@@ -55,7 +55,7 @@ namespace ReadNPassWebAPI.AppServices.Concrete
 
         public async Task<CustomResponse<BookPhotoViewModel>> UpdateUser(UserViewModel userViewModel)
         {
-            int repsonse = _bookRepository.Update(_mapper.Map<Book>(userViewModel));
+            int repsonse = _userRepository.Update(_mapper.Map<User>(userViewModel));
             if (repsonse > 0)
             {
                 return new CustomResponse<BookPhotoViewModel>(true, "Success");

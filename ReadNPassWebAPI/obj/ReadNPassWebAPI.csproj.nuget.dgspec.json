@@ -32,6 +32,9 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
+              "C:\\Users\\sedat\\source\\repos\\ReadNPassWebAPI\\ReadNPassWebAPI.Core\\ReadNPassWebAPI.Core.csproj": {
+                "projectPath": "C:\\Users\\sedat\\source\\repos\\ReadNPassWebAPI\\ReadNPassWebAPI.Core\\ReadNPassWebAPI.Core.csproj"
+              },
               "C:\\Users\\sedat\\source\\repos\\ReadNPassWebAPI\\ReadNPassWebAPI.Data\\ReadNPassWebAPI.Data.csproj": {
                 "projectPath": "C:\\Users\\sedat\\source\\repos\\ReadNPassWebAPI\\ReadNPassWebAPI.Data\\ReadNPassWebAPI.Data.csproj"
               },
@@ -185,6 +188,28 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -310,9 +335,19 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore.Analyzers": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[3.1.13, )"
+              "version": "[5.0.1, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
