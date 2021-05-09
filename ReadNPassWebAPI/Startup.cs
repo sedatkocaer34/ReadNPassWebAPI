@@ -7,8 +7,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using ReadNPass.Application.AutoMapper;
 using ReadNPassWebAPI.AppServices.Concrete;
 using ReadNPassWebAPI.AppServices.Interfaces;
+using ReadNPassWebAPI.Core.Security;
 using ReadNPassWebAPI.Data.Concrete;
 using ReadNPassWebAPI.Data.Interfaces;
 using ReadNPassWebAPI.Data.SystemDataContext;
@@ -45,7 +47,6 @@ namespace ReadNPassWebAPI
             services.AddScoped<IBookService, BookService>();
             services.AddScoped<IBookRepository, BookRepository>();
 
-
             services.AddScoped<IUserLibraryService, UserLibraryService>();
             services.AddScoped<IUserLibraryRepository, UserLibraryRepository>();
 
@@ -54,7 +55,11 @@ namespace ReadNPassWebAPI
 
             services.AddScoped<ReadNPassWebAPIDataContext>();
 
+            services.AddScoped<IPasswordHash, PasswordHash>();
+
             services.AddDbContext<ReadNPassWebAPIDataContext>(options => options.UseSqlServer("DefaultConnection"));
+
+            services.AddAutoMapper(typeof(ModelToViewModelMap), typeof(ViewModelToModelMap));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

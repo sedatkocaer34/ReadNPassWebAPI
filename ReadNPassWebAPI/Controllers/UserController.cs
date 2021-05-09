@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace ReadNPassWebAPI.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class UserController : Controller
     {
         private IUserService _userService;
@@ -26,6 +26,7 @@ namespace ReadNPassWebAPI.Controllers
             return Ok(response);
         }
 
+        [Route("AddUser")]
         [HttpPost]
         public async Task<IActionResult> AddUser(UserViewModel userViewModel)
         {

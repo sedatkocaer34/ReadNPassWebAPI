@@ -2,6 +2,7 @@
 using ReadNPassWebAPI.AppServices.Interfaces;
 using ReadNPassWebAPI.AppServices.ViewModels;
 using ReadNPassWebAPI.Core.Response;
+using ReadNPassWebAPI.Core.Security;
 using ReadNPassWebAPI.Data.Interfaces;
 using ReadNPassWebAPI.Domain.Entity;
 using System;
@@ -16,15 +17,19 @@ namespace ReadNPassWebAPI.AppServices.Concrete
 
         private IUserRepository _userRepository;
         private IMapper _mapper;
+        private IPasswordHash _passwordHash;
 
-        public UserService(IUserRepository userRepository, IMapper mapper)
+        public UserService(IUserRepository userRepository, IMapper mapper, IPasswordHash passwordHash)
         {
             this._userRepository = userRepository;
             this._mapper = mapper;
+            this._passwordHash = passwordHash;
         }
 
         public async Task<CustomResponse<BookPhotoViewModel>> AddUser(UserViewModel userViewModel)
         {
+            userViewModel.Password = _passwordHash.Hash(userViewModel.Password);
+
             int repsonse = _userRepository.Add(_mapper.Map<User>(userViewModel));
             if (repsonse > 0)
             {
