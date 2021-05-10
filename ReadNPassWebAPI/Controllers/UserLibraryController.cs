@@ -18,14 +18,14 @@ namespace ReadNPassWebAPI.Controllers
         {
             _userLibraryService = userLibraryService;
         }
-
+		[Route("GetUserLibrary")]
         [HttpGet]
         public IActionResult GetUserLibrary(Guid Id)
         {
             var response = _userLibraryService.GetById(Id);
             return Ok(response);
         }
-
+		[Route("AddUserLibrary")]
         [HttpPost]
         public async Task<IActionResult> AddUserLibrary(UserLibraryViewModel userLibraryViewModel)
         {
@@ -36,7 +36,7 @@ namespace ReadNPassWebAPI.Controllers
             }
             return BadRequest(response);
         }
-
+		[Route("UpdatUserLibrary")]
         [HttpPut]
         public async Task<IActionResult> UpdatUserLibrary(UserLibraryViewModel userLibraryViewModel)
         {
@@ -47,14 +47,14 @@ namespace ReadNPassWebAPI.Controllers
             }
             return BadRequest(response);
         }
-
+		[Route("GetAllUserLibrary")]
         [HttpGet]
         public async Task<IActionResult> GetAllUserLibrary()
         {
             var response = await _userLibraryService.GetAll();
             return Ok(response);
         }
-
+		[Route("DeleteUserLibrary")]
         [HttpDelete]
         public async Task<IActionResult> DeleteUserLibrary(Guid Id)
         {

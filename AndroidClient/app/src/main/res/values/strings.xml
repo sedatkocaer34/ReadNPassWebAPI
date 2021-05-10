@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ReadNPass</string>
+
+    <string name="text_profile">Profil</string>
+    <string name="text_messages">Mesajlar</string>
+    <string name="text_home">Anasayfa</string>
 </resources>

@@ -38,8 +38,9 @@ namespace ReadNPassWebAPI.Controllers
             return BadRequest(response);
         }
 
+        [Route("UpdateUser")]
         [HttpPut]
-        public async Task<IActionResult> UpdatUser(UserViewModel userViewModel)
+        public async Task<IActionResult> UpdateUser(UserViewModel userViewModel)
         {
             var response = await _userService.UpdateUser(userViewModel);
             if (response.Success)
@@ -48,14 +49,14 @@ namespace ReadNPassWebAPI.Controllers
             }
             return BadRequest(response);
         }
-
+		[Route("GetAllUser")]
         [HttpGet]
         public async Task<IActionResult> GetAllUser()
         {
             var response = await _userService.GetAll();
             return Ok(response);
         }
-
+		[Route("DeleteUser")]
         [HttpDelete]
         public async Task<IActionResult> DeleteUser(Guid Id)
         {

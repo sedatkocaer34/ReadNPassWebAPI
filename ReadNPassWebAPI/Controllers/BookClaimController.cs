@@ -18,14 +18,14 @@ namespace ReadNPassWebAPI.Controllers
         {
             _bookClaimService = bookClaimService;
         }
-
+		[Route("GetBookClaim")]
         [HttpGet]
         public IActionResult GetBookClaim(Guid Id)
         {
             var response = _bookClaimService.GetById(Id);
             return Ok(response);
         }
-
+		[Route("AddBookClaim")]
         [HttpPost]
         public async Task<IActionResult> AddBookClaim(BookClaimViewModel bookClaimViewModel)
         {
@@ -36,7 +36,7 @@ namespace ReadNPassWebAPI.Controllers
             }
             return BadRequest(response);
         }
-
+		[Route("UpdateBookClaim")]
         [HttpPut]
         public async Task<IActionResult> UpdateBookClaim(BookClaimViewModel bookClaimViewModel)
         {
@@ -47,14 +47,14 @@ namespace ReadNPassWebAPI.Controllers
             }
             return BadRequest(response);
         }
-
+		[Route("GetAllBookClaim")]
         [HttpGet]
         public async Task<IActionResult> GetAllBookClaim()
         {
             var response = await _bookClaimService.GetAll();
             return Ok(response);
         }
-
+		[Route("DeleteBookClaim")]
         [HttpDelete]
         public async Task<IActionResult> DeleteBookClaim(Guid Id)
         {
