@@ -19,12 +19,14 @@ namespace ReadNPassWebAPI.Controllers
         {
             _bookPhotoService = bookPhotoService;
         }
+		[Route("GetBookPhoto")]
         [HttpGet]
         public IActionResult GetBookPhoto(Guid Id)
         {
             var response = _bookPhotoService.GetById(Id);
             return Ok(response);
         }
+		[Route("AddBookPhoto")]
         [HttpPost]
         public async Task<IActionResult> AddBookPhoto(BookPhotoViewModel bookPhotoViewModel)
         {
@@ -35,7 +37,7 @@ namespace ReadNPassWebAPI.Controllers
             }
             return BadRequest(response);
         }
-
+		[Route("UpdateBookPhoto")]
         [HttpPut]
         public async Task<IActionResult> UpdateBookPhoto(BookPhotoViewModel bookPhotoViewModel)
         {
@@ -46,14 +48,14 @@ namespace ReadNPassWebAPI.Controllers
             }
             return BadRequest(response);
         }
-
+		[Route("GetAllBookPhoto")]
         [HttpGet]
         public async Task<IActionResult> GetAllBookPhoto()
         {
             var response = await _bookPhotoService.GetAll();
             return Ok(response);
         }
-
+		[Route("DeleteBookPhoto")]
         [HttpDelete]
         public async Task<IActionResult> DeleteBookPhoto(Guid Id)
         {

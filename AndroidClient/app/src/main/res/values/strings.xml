@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">ReadNPass</string>
+
+    <string name="text_profile">Profil</string>
+    <string name="text_messages">Mesajlar</string>
+    <string name="text_home">Anasayfa</string>
+
+    <string name="login_email_hint">Email</string>
+    <string name="login_password_hint">Şifre</string>
+
+
 </resources>
