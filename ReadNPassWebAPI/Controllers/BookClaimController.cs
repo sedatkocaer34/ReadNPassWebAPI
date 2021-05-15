@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace ReadNPassWebAPI.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class BookClaimController : Controller
     {
         private IBookClaimService _bookClaimService;

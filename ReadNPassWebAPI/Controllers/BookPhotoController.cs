@@ -10,7 +10,7 @@ namespace ReadNPassWebAPI.Controllers
 {
 
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class BookPhotoController : Controller
     {
         private IBookPhotoService _bookPhotoService;
