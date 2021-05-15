@@ -3,6 +3,7 @@ package com.example.readnpass.Activity;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +12,7 @@ import com.example.readnpass.Interfaces.ApiClient;
 import com.example.readnpass.Interfaces.IRestService;
 import com.example.readnpass.Models.User;
 import com.example.readnpass.R;
+
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -37,7 +39,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private void getUser()
     {
-        Call<User> call = restService.getUser(1);
+        Call<User> call = restService.GetUser(1);
         call.enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {

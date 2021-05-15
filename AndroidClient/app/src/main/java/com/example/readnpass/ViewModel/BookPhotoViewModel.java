@@ -1,16 +1,16 @@
-package com.example.readnpass.Models;
+package com.example.readnpass.ViewModel;
 
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
-public class BookPhoto implements Serializable
+public class BookPhotoViewModel implements Serializable
 {
     @SerializedName("id")
     public String Id;
 
     @SerializedName("bookId")
-    public String BookId;
+    public String  BookId;
 
     @SerializedName("bookPhotoUrl")
     public String BookPhotoUrl;
