@@ -2,14 +2,22 @@ package com.example.readnpass.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.MenuItemCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import android.app.SearchManager;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
+import android.speech.RecognizerIntent;
+import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
+import androidx.appcompat.widget.SearchView;
+import android.widget.Toast;
 
 import com.example.readnpass.Fragments.HomeFragment;
 import com.example.readnpass.Fragments.MessageFragment;
@@ -17,50 +25,70 @@ import com.example.readnpass.Fragments.ProfileFragment;
 import com.example.readnpass.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.ArrayList;
 
-    final Fragment fragment1 = new HomeFragment();
-    final Fragment fragment2 = new MessageFragment();
-    final Fragment fragment3 = new ProfileFragment();
+public class MainActivity extends AppCompatActivity  {
+    final Fragment fragmentHome = new HomeFragment();
+    final Fragment fragmentMessage = new MessageFragment();
+    final Fragment fragmentProfile = new ProfileFragment();
     final FragmentManager fm = getSupportFragmentManager();
-    Fragment active = fragment1;
+    Fragment active = fragmentHome;
+    Context context=this;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        BottomNavigationView bottomNavigationView = (BottomNavigationView)
-                findViewById(R.id.bottom_navigation);
-
+        Toolbar toolbar = findViewById(R.id.main_tool_bar);
+        toolbar.setTitle("");
+        setSupportActionBar(toolbar);
+        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-
-        fm.beginTransaction().add(R.id.main_container, fragment3, "3").hide(fragment3).commit();
-        fm.beginTransaction().add(R.id.main_container, fragment2, "2").hide(fragment2).commit();
-        fm.beginTransaction().add(R.id.main_container,fragment1, "1").commit();
-
-
+        bottomNavigationView.setSelectedItemId(R.id.action_schedules);
+        fm.beginTransaction().add(R.id.main_container, fragmentProfile, "3").hide(fragmentProfile).commit();
+        fm.beginTransaction().add(R.id.main_container, fragmentMessage, "2").hide(fragmentMessage).commit();
+        fm.beginTransaction().add(R.id.main_container,fragmentHome, "1").commit();
     }
 
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_toolbar_menu,menu);
+        final SearchView searchView = (SearchView) MenuItemCompat.getActionView(menu.findItem(R.id.ic_search));
+        SearchManager searchManager = (SearchManager) getSystemService(SEARCH_SERVICE);
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId())
+        {
+            case R.id.ic_search:
+                Toast.makeText(context, "Hey", Toast.LENGTH_SHORT).show();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.action_favorites:
-                    Log.i("tıklandı", "onNavigationItemSelected: ");
-                    fm.beginTransaction().hide(active).show(fragment1).commit();
-                    active = fragment1;
+                    fm.beginTransaction().hide(active).show(fragmentMessage).commit();
+                    active = fragmentMessage;
                     return true;
                 case R.id.action_schedules:
-                    fm.beginTransaction().hide(active).show(fragment2).commit();
-                    active = fragment2;
+                    fm.beginTransaction().hide(active).show(fragmentHome).commit();
+                    active = fragmentHome;
                     return true;
                 case R.id.action_music:
-                    fm.beginTransaction().hide(active).show(fragment3).commit();
-                    active = fragment3;
+                    fm.beginTransaction().hide(active).show(fragmentProfile).commit();
+                    active = fragmentProfile;
                     return true;
             }
             return false;
         }
     };
+
+
 }

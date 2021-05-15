@@ -4,9 +4,7 @@ public class HomeItem {
     public String desc;
     public int id;
 
-    public HomeItem(){
-
-    }
+    public HomeItem(){ }
 
     public HomeItem(String desc, int id) {
         this.desc = desc;
