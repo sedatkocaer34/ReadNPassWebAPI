@@ -7,3 +7,12 @@ C:\Users\sedat\source\repos\ReadNPassWebAPI\ReadNPassWebAPI.Core\obj\Debug\netco
 C:\Users\sedat\source\repos\ReadNPassWebAPI\ReadNPassWebAPI.Core\obj\Debug\netcoreapp3.1\ReadNPassWebAPI.Core.csproj.CoreCompileInputs.cache
 C:\Users\sedat\source\repos\ReadNPassWebAPI\ReadNPassWebAPI.Core\obj\Debug\netcoreapp3.1\ReadNPassWebAPI.Core.dll
 C:\Users\sedat\source\repos\ReadNPassWebAPI\ReadNPassWebAPI.Core\obj\Debug\netcoreapp3.1\ReadNPassWebAPI.Core.pdb
+C:\donemProjesi\ReadNPassWebAPI\ReadNPassWebAPI.Core\bin\Debug\netcoreapp3.1\ReadNPassWebAPI.Core.deps.json
+C:\donemProjesi\ReadNPassWebAPI\ReadNPassWebAPI.Core\bin\Debug\netcoreapp3.1\ReadNPassWebAPI.Core.dll
+C:\donemProjesi\ReadNPassWebAPI\ReadNPassWebAPI.Core\bin\Debug\netcoreapp3.1\ReadNPassWebAPI.Core.pdb
+C:\donemProjesi\ReadNPassWebAPI\ReadNPassWebAPI.Core\obj\Debug\netcoreapp3.1\ReadNPassWebAPI.Core.csprojAssemblyReference.cache
+C:\donemProjesi\ReadNPassWebAPI\ReadNPassWebAPI.Core\obj\Debug\netcoreapp3.1\ReadNPassWebAPI.Core.AssemblyInfoInputs.cache
+C:\donemProjesi\ReadNPassWebAPI\ReadNPassWebAPI.Core\obj\Debug\netcoreapp3.1\ReadNPassWebAPI.Core.AssemblyInfo.cs
+C:\donemProjesi\ReadNPassWebAPI\ReadNPassWebAPI.Core\obj\Debug\netcoreapp3.1\ReadNPassWebAPI.Core.csproj.CoreCompileInputs.cache
+C:\donemProjesi\ReadNPassWebAPI\ReadNPassWebAPI.Core\obj\Debug\netcoreapp3.1\ReadNPassWebAPI.Core.dll
+C:\donemProjesi\ReadNPassWebAPI\ReadNPassWebAPI.Core\obj\Debug\netcoreapp3.1\ReadNPassWebAPI.Core.pdb

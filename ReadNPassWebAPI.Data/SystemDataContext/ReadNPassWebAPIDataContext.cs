@@ -15,8 +15,13 @@ namespace ReadNPassWebAPI.Data.SystemDataContext
 
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+
+
+
         {
-            optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-BQP1I0E;Initial Catalog=ReadNPassDataBase;Integrated Security=true;");
+            //OKA Url = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=master;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"
+            //Sedat Url = @"Data Source=DESKTOP-BQP1I0E;Initial Catalog=ReadNPassDataBase;Integrated Security=true;"
+            optionsBuilder.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=ReadNPassDataBase;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

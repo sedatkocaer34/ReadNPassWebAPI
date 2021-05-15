@@ -10,3 +10,15 @@ C:\Users\sedat\source\repos\ReadNPassWebAPI\ReadNPassWebAPI.Domain\obj\Debug\net
 C:\Users\sedat\source\repos\ReadNPassWebAPI\ReadNPassWebAPI.Domain\obj\Debug\netcoreapp3.1\ReadNPassWebAPI.Domain.csproj.CopyComplete
 C:\Users\sedat\source\repos\ReadNPassWebAPI\ReadNPassWebAPI.Domain\obj\Debug\netcoreapp3.1\ReadNPassWebAPI.Domain.dll
 C:\Users\sedat\source\repos\ReadNPassWebAPI\ReadNPassWebAPI.Domain\obj\Debug\netcoreapp3.1\ReadNPassWebAPI.Domain.pdb
+C:\donemProjesi\ReadNPassWebAPI\ReadNPassWebAPI.Domain\bin\Debug\netcoreapp3.1\ReadNPassWebAPI.Domain.deps.json
+C:\donemProjesi\ReadNPassWebAPI\ReadNPassWebAPI.Domain\bin\Debug\netcoreapp3.1\ReadNPassWebAPI.Domain.dll
+C:\donemProjesi\ReadNPassWebAPI\ReadNPassWebAPI.Domain\bin\Debug\netcoreapp3.1\ReadNPassWebAPI.Domain.pdb
+C:\donemProjesi\ReadNPassWebAPI\ReadNPassWebAPI.Domain\bin\Debug\netcoreapp3.1\ReadNPassWebAPI.Core.dll
+C:\donemProjesi\ReadNPassWebAPI\ReadNPassWebAPI.Domain\bin\Debug\netcoreapp3.1\ReadNPassWebAPI.Core.pdb
+C:\donemProjesi\ReadNPassWebAPI\ReadNPassWebAPI.Domain\obj\Debug\netcoreapp3.1\ReadNPassWebAPI.Domain.csprojAssemblyReference.cache
+C:\donemProjesi\ReadNPassWebAPI\ReadNPassWebAPI.Domain\obj\Debug\netcoreapp3.1\ReadNPassWebAPI.Domain.AssemblyInfoInputs.cache
+C:\donemProjesi\ReadNPassWebAPI\ReadNPassWebAPI.Domain\obj\Debug\netcoreapp3.1\ReadNPassWebAPI.Domain.AssemblyInfo.cs
+C:\donemProjesi\ReadNPassWebAPI\ReadNPassWebAPI.Domain\obj\Debug\netcoreapp3.1\ReadNPassWebAPI.Domain.csproj.CoreCompileInputs.cache
+C:\donemProjesi\ReadNPassWebAPI\ReadNPassWebAPI.Domain\obj\Debug\netcoreapp3.1\ReadNPassWebAPI.Domain.csproj.CopyComplete
+C:\donemProjesi\ReadNPassWebAPI\ReadNPassWebAPI.Domain\obj\Debug\netcoreapp3.1\ReadNPassWebAPI.Domain.dll
+C:\donemProjesi\ReadNPassWebAPI\ReadNPassWebAPI.Domain\obj\Debug\netcoreapp3.1\ReadNPassWebAPI.Domain.pdb
