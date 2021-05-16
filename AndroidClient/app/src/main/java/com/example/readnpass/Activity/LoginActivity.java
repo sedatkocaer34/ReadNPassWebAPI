@@ -37,7 +37,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private void getUser()
     {
-        Call<User> call = restService.getUser(1);
+        Call<User> call = restService.GetUser(1);
         call.enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {

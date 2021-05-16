@@ -8,9 +8,9 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 public interface IRestService {
-    @GET("api/user/getuser")
+    @GET("/api/user/getuser")
     Call<User> GetUser(int userId);
 
-    @POST("api/user/addUser")
+    @POST("/api/user/addUser")
     Call<BaseResponse<User>> AddUser(int userId);
 }
