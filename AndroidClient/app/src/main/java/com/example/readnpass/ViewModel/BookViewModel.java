@@ -1,22 +1,16 @@
-package com.example.readnpass.Models;
+package com.example.readnpass.ViewModel;
 
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
-public class Book implements Serializable
+public class BookViewModel implements Serializable
 {
     @SerializedName("id")
     public String Id;
 
     @SerializedName("bookName")
     public String BookName;
-
-    @SerializedName("bookCreateDate")
-    public String BookCreateDate;
-
-    @SerializedName("bookUpdateDate")
-    public String BookUpdateDate;
 
     @SerializedName("userLibraryId")
     public String UserLibraryId;
@@ -35,22 +29,6 @@ public class Book implements Serializable
 
     public void setBookName(String bookName) {
         BookName = bookName;
-    }
-
-    public String getBookCreateDate() {
-        return BookCreateDate;
-    }
-
-    public void setBookCreateDate(String bookCreateDate) {
-        BookCreateDate = bookCreateDate;
-    }
-
-    public String getBookUpdateDate() {
-        return BookUpdateDate;
-    }
-
-    public void setBookUpdateDate(String bookUpdateDate) {
-        BookUpdateDate = bookUpdateDate;
     }
 
     public String getUserLibraryId() {
