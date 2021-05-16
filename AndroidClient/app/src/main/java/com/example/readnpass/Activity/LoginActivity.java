@@ -12,6 +12,7 @@ import com.example.readnpass.Interfaces.ApiClient;
 import com.example.readnpass.Interfaces.IRestService;
 import com.example.readnpass.Models.User;
 import com.example.readnpass.R;
+import com.example.readnpass.ViewModel.UserViewModel;
 
 
 import retrofit2.Call;
@@ -39,15 +40,15 @@ public class LoginActivity extends AppCompatActivity {
 
     private void getUser()
     {
-        Call<User> call = restService.GetUser(1);
-        call.enqueue(new Callback<User>() {
+        Call<UserViewModel> call = restService.GetUser(1);
+        call.enqueue(new Callback<UserViewModel>() {
             @Override
-            public void onResponse(Call<User> call, Response<User> response) {
+            public void onResponse(Call<UserViewModel> call, Response<UserViewModel> response) {
 
             }
 
             @Override
-            public void onFailure(Call<User> call, Throwable t) {
+            public void onFailure(Call<UserViewModel> call, Throwable t) {
 
             }
         });
