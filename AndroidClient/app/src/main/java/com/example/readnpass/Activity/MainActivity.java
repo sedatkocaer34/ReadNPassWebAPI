@@ -65,6 +65,10 @@ public class MainActivity extends AppCompatActivity  {
             case R.id.ic_search:
                 Toast.makeText(context, "Hey", Toast.LENGTH_SHORT).show();
                 break;
+            case R.id.ic_setting:
+                Intent intent = new Intent(context,MessageActivity.class);
+                context.startActivity(intent);
+                break;
         }
         return super.onOptionsItemSelected(item);
     }

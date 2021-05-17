@@ -42,7 +42,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="15sp"
             android:fontFamily="sans-serif-light"
-            android:text="Sedat Kocaer"
+            android:text="Oğuz Kaan Aygün"
             android:textColor="@color/white"
             android:textSize="32sp" />
 
@@ -54,7 +54,7 @@
             android:layout_below="@+id/tv_name"
             android:layout_centerHorizontal="true"
             android:fontFamily="sans-serif"
-            android:text="Eyüp/İSTANBUL"
+            android:text="AnadoluHisarı/İSTANBUL"
             android:textAllCaps="true"
             android:textColor="@color/address"
             android:textSize="14sp" />
@@ -100,7 +100,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
-                    android:text="Kütüphane Oluştur"
+                    android:text="Kütüphanem"
                     android:textColor="@color/white"
                     android:textSize="18sp" />
             </LinearLayout>
@@ -169,7 +169,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
-                    android:text="Sedat Kocaer"
+                    android:text="Oğuz Kaan Aygün"
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
@@ -198,7 +198,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
-                    android:text="+1-202-555-0157"
+                    android:text="05321234567"
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
@@ -227,7 +227,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
-                    android:text="joey@sharenofood.com"
+                    android:text="readnpasssoftware@readnpass.com"
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
