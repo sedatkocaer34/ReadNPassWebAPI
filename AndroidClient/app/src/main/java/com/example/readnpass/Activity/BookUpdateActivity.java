@@ -9,13 +9,13 @@ import com.example.readnpass.Interfaces.ApiClient;
 import com.example.readnpass.Interfaces.IRestService;
 import com.example.readnpass.R;
 
-public class LibraryListActivity extends AppCompatActivity
+public class BookUpdateActivity extends AppCompatActivity
 {
     private IRestService restService;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         restService = ApiClient.getClient().create(IRestService.class);
-        setContentView(R.layout.activity_librarylist);
+        setContentView(R.layout.activity_bookupdate);
     }
 }
