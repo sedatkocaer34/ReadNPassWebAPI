@@ -10,8 +10,10 @@ import com.example.readnpass.ViewModel.UserLibraryViewModel;
 import com.example.readnpass.ViewModel.UserViewModel;
 
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
+import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
 
@@ -21,8 +23,9 @@ public interface IRestService
     @GET("/api/user/getUser")
     Call<UserViewModel> GetUser(int Id);
 
+    @Headers({"Content-Type: application/json"})
     @POST("/api/user/addUser")
-    Call<BaseResponse<UserViewModel>> AddUser(UserViewModel userViewModel);
+    Call<BaseResponse<UserViewModel>> AddUser(@Body UserViewModel userViewModel);
 
     @PUT("/api/user/updateUser")
     Call<BaseResponse<UserViewModel>> UpdateUser(UserViewModel userViewModel);

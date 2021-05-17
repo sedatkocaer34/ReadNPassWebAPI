@@ -59,7 +59,19 @@
                             style="@style/modifiedEditText"
                             android:inputType="textPersonName"
                             android:maxLines="1"
-                            android:hint="Kullanıcı Adı"/>
+                            android:hint="İsim"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textInputsurName"
+                        style="@style/parent"
+                        android:layout_marginTop="@dimen/loginViewsMargin">
+                        <EditText
+                            android:id="@+id/editTextSurname"
+                            style="@style/modifiedEditText"
+                            android:inputType="textPersonName"
+                            android:maxLines="1"
+                            android:hint="Soyisim"/>
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -72,17 +84,6 @@
                             android:inputType="textEmailAddress"
                             android:maxLines="1"
                             android:hint="@string/login_email_hint"/>
-                    </com.google.android.material.textfield.TextInputLayout>
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/textInputMobile"
-                        style="@style/parent"
-                        android:layout_marginTop="@dimen/loginViewsMargin">
-                        <EditText
-                            android:id="@+id/editTextMobile"
-                            style="@style/modifiedEditText"
-                            android:inputType="phone"
-                            android:maxLines="1"
-                            android:hint="Telefon Numarası"/>
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -106,6 +107,7 @@
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="@dimen/loginViewsMargin"
                         app:initialCornerAngle="27dp"
+                        android:onClick="onRegisterClick"
                         app:spinning_bar_padding="6dp"/>
 
                     <TextView

@@ -6,6 +6,17 @@ import java.io.Serializable;
 
 public class UserViewModel implements Serializable
 {
+    public UserViewModel(String id, String name, String surName, String password, String email, String defaultUserProfiePhoto, double locationLatidute, double longitudeLatidute) {
+        Id = id;
+        Name = name;
+        SurName = surName;
+        Password = password;
+        Email = email;
+        DefaultUserProfiePhoto = defaultUserProfiePhoto;
+        this.locationLatidute = locationLatidute;
+        this.longitudeLatidute = longitudeLatidute;
+    }
+
     @SerializedName("id")
     public String Id;
 
