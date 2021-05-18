@@ -29,6 +29,10 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        editTextName = findViewById(R.id.editTextName);
+        editTextSurName = findViewById(R.id.editTextSurname);
+        editTextEmail = findViewById(R.id.editTextEmail);
+        editTextPassword = findViewById(R.id.editTextPassword);
         restService = ApiClient.getClient().create(IRestService.class);
         changeStatusBarColor();
     }
