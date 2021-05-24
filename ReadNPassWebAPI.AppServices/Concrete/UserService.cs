@@ -26,16 +26,16 @@ namespace ReadNPassWebAPI.AppServices.Concrete
             this._passwordHash = passwordHash;
         }
 
-        public async Task<CustomResponse<BookPhotoViewModel>> AddUser(UserViewModel userViewModel)
+        public async Task<CustomResponse<UserViewModel>> AddUser(UserViewModel userViewModel)
         {
             userViewModel.Password = _passwordHash.Hash(userViewModel.Password);
 
             int repsonse = _userRepository.Add(_mapper.Map<User>(userViewModel));
             if (repsonse > 0)
             {
-                return new CustomResponse<BookPhotoViewModel>(true, "Success");
+                return new CustomResponse<UserViewModel>(true, "Success");
             }
-            return new CustomResponse<BookPhotoViewModel>(true, "Error");
+            return new CustomResponse<UserViewModel>(true, "Error");
         }
 
         public async Task<IEnumerable<UserViewModel>> GetAll()
@@ -58,14 +58,14 @@ namespace ReadNPassWebAPI.AppServices.Concrete
             return new CustomResponse<bool>(true, "Error");
         }
 
-        public async Task<CustomResponse<BookPhotoViewModel>> UpdateUser(UserViewModel userViewModel)
+        public async Task<CustomResponse<UserViewModel>> UpdateUser(UserViewModel userViewModel)
         {
             int repsonse = _userRepository.Update(_mapper.Map<User>(userViewModel));
             if (repsonse > 0)
             {
-                return new CustomResponse<BookPhotoViewModel>(true, "Success");
+                return new CustomResponse<UserViewModel>(true, "Success");
             }
-            return new CustomResponse<BookPhotoViewModel>(true, "Error");
+            return new CustomResponse<UserViewModel>(true, "Error");
         }
     }
 }

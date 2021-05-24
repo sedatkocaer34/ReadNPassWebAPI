@@ -3,6 +3,7 @@ package com.example.readnpass.Activity;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -51,18 +52,19 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     public void onRegisterClick(View view){
-        Call<BaseResponse<UserViewModel>> call =  restService.AddUser(new UserViewModel("0",editTextName.getText().toString(),
+        Call<BaseResponse<UserViewModel>> call =  restService.AddUser(new UserViewModel(editTextName.getText().toString(),
                 editTextSurName.getText().toString(),editTextEmail.getText().toString(),
                 editTextPassword.getText().toString(),"00",0,0));
         call.enqueue(new Callback<BaseResponse<UserViewModel>>() {
             @Override
             public void onResponse(Call<BaseResponse<UserViewModel>> call, Response<BaseResponse<UserViewModel>> response) {
-                Toast.makeText(RegisterActivity.this, "Kaydın Başarılı", Toast.LENGTH_SHORT).show();
+                Toast.makeText(RegisterActivity.this, "Kaydın Başarılı"+response, Toast.LENGTH_SHORT).show();
+                Log.i("hata", "onFailure: "+response);
             }
 
             @Override
             public void onFailure(Call<BaseResponse<UserViewModel>> call, Throwable t) {
-
+                Log.i("hata", "onFailure: "+t.getMessage().toString());
             }
         });
     }

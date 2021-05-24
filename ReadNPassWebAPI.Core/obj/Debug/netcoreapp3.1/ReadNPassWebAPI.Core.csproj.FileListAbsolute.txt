@@ -1,7 +1,6 @@
 C:\Users\sedat\source\repos\ReadNPassWebAPI\ReadNPassWebAPI.Core\bin\Debug\netcoreapp3.1\ReadNPassWebAPI.Core.deps.json
 C:\Users\sedat\source\repos\ReadNPassWebAPI\ReadNPassWebAPI.Core\bin\Debug\netcoreapp3.1\ReadNPassWebAPI.Core.dll
 C:\Users\sedat\source\repos\ReadNPassWebAPI\ReadNPassWebAPI.Core\bin\Debug\netcoreapp3.1\ReadNPassWebAPI.Core.pdb
-C:\Users\sedat\source\repos\ReadNPassWebAPI\ReadNPassWebAPI.Core\obj\Debug\netcoreapp3.1\ReadNPassWebAPI.Core.csprojAssemblyReference.cache
 C:\Users\sedat\source\repos\ReadNPassWebAPI\ReadNPassWebAPI.Core\obj\Debug\netcoreapp3.1\ReadNPassWebAPI.Core.AssemblyInfoInputs.cache
 C:\Users\sedat\source\repos\ReadNPassWebAPI\ReadNPassWebAPI.Core\obj\Debug\netcoreapp3.1\ReadNPassWebAPI.Core.AssemblyInfo.cs
 C:\Users\sedat\source\repos\ReadNPassWebAPI\ReadNPassWebAPI.Core\obj\Debug\netcoreapp3.1\ReadNPassWebAPI.Core.csproj.CoreCompileInputs.cache

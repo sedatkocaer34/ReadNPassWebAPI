@@ -28,7 +28,7 @@ namespace ReadNPassWebAPI.Controllers
 
         [Route("AddUser")]
         [HttpPost]
-        public async Task<IActionResult> AddUser(UserViewModel userViewModel)
+        public async Task<IActionResult> AddUser([FromBody] UserViewModel userViewModel)
         {
             var response = await _userService.AddUser(userViewModel);
             if (response.Success)
