@@ -157,4 +157,14 @@
         android:layout_marginRight="11dp"
         android:layout_marginBottom="30dp"
         android:onClick="onLoginClick"/>
+    <ProgressBar
+        android:id="@+id/progress_loader"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+
+        />
 </RelativeLayout>

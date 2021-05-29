@@ -1,5 +1,6 @@
 package com.example.readnpass.Activity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,11 +28,15 @@ public class RegisterActivity extends AppCompatActivity {
 
     private IRestService restService;
     EditText editTextName,editTextSurName,editTextEmail,editTextPassword;
+    Context context = this;
+    ProgressBar   pgsBar ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         editTextName = findViewById(R.id.editTextName);
+        pgsBar = (ProgressBar) findViewById(R.id.progress_loader);
+        pgsBar.setVisibility(View.GONE);
         editTextSurName = findViewById(R.id.editTextSurname);
         editTextEmail = findViewById(R.id.editTextEmail);
         editTextPassword = findViewById(R.id.editTextPassword);
@@ -52,20 +58,36 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     public void onRegisterClick(View view){
-        Call<BaseResponse<UserViewModel>> call =  restService.AddUser(new UserViewModel(editTextName.getText().toString(),
+        showLoading();
+        final UserViewModel userViewModel =new UserViewModel(editTextName.getText().toString(),
                 editTextSurName.getText().toString(),editTextEmail.getText().toString(),
-                editTextPassword.getText().toString(),"00",0,0));
+                editTextPassword.getText().toString(),"00",0,0);
+        Call<BaseResponse<UserViewModel>> call =  restService.AddUser(userViewModel);
         call.enqueue(new Callback<BaseResponse<UserViewModel>>() {
             @Override
             public void onResponse(Call<BaseResponse<UserViewModel>> call, Response<BaseResponse<UserViewModel>> response) {
-                Toast.makeText(RegisterActivity.this, "Kaydın Başarılı"+response, Toast.LENGTH_SHORT).show();
-                Log.i("hata", "onFailure: "+response);
+                Intent intent = new Intent(context,MainActivity.class);
+                intent.putExtra("userModel",userViewModel);
+                startActivity(intent);
+                hideLoading();
             }
 
             @Override
             public void onFailure(Call<BaseResponse<UserViewModel>> call, Throwable t) {
-                Log.i("hata", "onFailure: "+t.getMessage().toString());
+                Toast.makeText(RegisterActivity.this, "Hata Yaşandı Tekrar Deneyiniz.", Toast.LENGTH_SHORT).show();
+                hideLoading();
             }
         });
+
+    }
+
+    private  void hideLoading()
+    {
+        pgsBar.setVisibility(View.GONE);
+    }
+
+    private  void showLoading()
+    {
+        pgsBar.setVisibility(View.VISIBLE);
     }
 }

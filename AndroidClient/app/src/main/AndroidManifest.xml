@@ -3,6 +3,8 @@
     package="com.example.readnpass">
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,7 +13,7 @@
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.MainActivity">
+        <activity android:name=".Activity.RegisterActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,9 +21,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activity.MessageActivity"/>
-
         <activity android:name=".Activity.BookAddActivity"/>
         <activity android:name=".Activity.BookListActivity"/>
+        <activity android:name=".Activity.MainActivity"/>
+        <activity android:name=".Activity.LoginActivity"/>
+        <activity android:name=".Activity.BookAddPhotoActivity"/>
         <activity android:name=".Activity.UserProfileUpdateActivity"/>
     </application>
 </manifest>

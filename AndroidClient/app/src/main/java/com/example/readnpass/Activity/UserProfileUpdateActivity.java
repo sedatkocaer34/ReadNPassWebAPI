@@ -20,7 +20,7 @@ public class UserProfileUpdateActivity extends AppCompatActivity
         restService = ApiClient.getClient().create(IRestService.class);
         setContentView(R.layout.activity_userprofileupdate);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        
+
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

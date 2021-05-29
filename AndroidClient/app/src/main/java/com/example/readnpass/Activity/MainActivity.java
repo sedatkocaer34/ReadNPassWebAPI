@@ -23,14 +23,15 @@ import com.example.readnpass.Fragments.HomeFragment;
 import com.example.readnpass.Fragments.MessageFragment;
 import com.example.readnpass.Fragments.ProfileFragment;
 import com.example.readnpass.R;
+import com.example.readnpass.ViewModel.UserViewModel;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity  {
-    final Fragment fragmentHome = new HomeFragment();
+    final Fragment fragmentHome    = new HomeFragment();
     final Fragment fragmentMessage = new MessageFragment();
-    final Fragment fragmentProfile = new ProfileFragment();
+    Fragment fragmentProfile ;
     final FragmentManager fm = getSupportFragmentManager();
     Fragment active = fragmentHome;
     Context context=this;
@@ -38,12 +39,15 @@ public class MainActivity extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        UserViewModel userModel = (UserViewModel) getIntent().getSerializableExtra("userModel");
+
         Toolbar toolbar = findViewById(R.id.main_tool_bar);
         toolbar.setTitle("");
         setSupportActionBar(toolbar);
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         bottomNavigationView.setSelectedItemId(R.id.action_schedules);
+        fragmentProfile = new ProfileFragment(userModel);
         fm.beginTransaction().add(R.id.main_container, fragmentProfile, "3").hide(fragmentProfile).commit();
         fm.beginTransaction().add(R.id.main_container, fragmentMessage, "2").hide(fragmentMessage).commit();
         fm.beginTransaction().add(R.id.main_container,fragmentHome, "1").commit();
