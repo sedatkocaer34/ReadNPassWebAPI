@@ -64,6 +64,8 @@ public class MainActivity extends AppCompatActivity  {
         {
             case R.id.ic_search:
                 Toast.makeText(context, "Hey", Toast.LENGTH_SHORT).show();
+                fm.beginTransaction().hide(active).show(fragmentHome).commit();
+                active = fragmentHome;
                 break;
             case R.id.ic_setting:
                 Intent intent = new Intent(context,MessageActivity.class);

@@ -35,7 +35,7 @@ namespace ReadNPassWebAPI.AppServices.Concrete
             {
                 return new CustomResponse<UserViewModel>(true, "Success");
             }
-            return new CustomResponse<UserViewModel>(true, "Error");
+            return new CustomResponse<UserViewModel>(false, "Error");
         }
 
         public async Task<IEnumerable<UserViewModel>> GetAll()
@@ -55,7 +55,7 @@ namespace ReadNPassWebAPI.AppServices.Concrete
             {
                 return new CustomResponse<bool>(true, "Success");
             }
-            return new CustomResponse<bool>(true, "Error");
+            return new CustomResponse<bool>(false, "Error");
         }
 
         public async Task<CustomResponse<UserViewModel>> UpdateUser(UserViewModel userViewModel)
@@ -65,7 +65,7 @@ namespace ReadNPassWebAPI.AppServices.Concrete
             {
                 return new CustomResponse<UserViewModel>(true, "Success");
             }
-            return new CustomResponse<UserViewModel>(true, "Error");
+            return new CustomResponse<UserViewModel>(false, "Error");
         }
     }
 }

@@ -60,6 +60,7 @@
             android:textSize="14sp" />
 
         <ImageView
+            android:id="@+id/btnupdateprofile"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_alignParentRight="true"
@@ -79,6 +80,7 @@
         android:orientation="horizontal">
 
         <RelativeLayout
+            android:id="@+id/btnaddlibrary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -108,6 +110,7 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/btnaddbook"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
