@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using ReadNPassWebAPI.AppServices.Interfaces;
 using ReadNPassWebAPI.AppServices.ViewModels;
 using System;
@@ -19,25 +20,55 @@ namespace ReadNPassWebAPI.Controllers
         }
 		[Route("GetBook")]
         [HttpGet]
-        public IActionResult GetBook(Guid Id)
+        public async Task<IActionResult> GetBook(Guid Id)
         {
-            var response = _bookService.GetById(Id);
+            var response = await _bookService.GetById(Id);
             return Ok(response);
         }
-		[Route("AddBook")]
-        [HttpPost]
-        public async Task<IActionResult> AddBook(BookViewModel bookViewModel)
+
+        [Route("GetUserBook")]
+        [HttpGet]
+        public async Task<IActionResult> GetUserBook(Guid Id)
         {
-            var response = await _bookService.AddBook(bookViewModel);
-            if (response.Success)
+            var response = await _bookService.GetUserBook(Id);
+            return Ok(response);
+        }
+        [Route("AddBook")]
+        [HttpPost]
+        public async Task<IActionResult> AddBook()
+        {
+            try
             {
-                return Ok(response);
+                var request = HttpContext.Request;
+                var ds = request.Form.Files;
+                var dse = request.Form["bookViewModel"].ToString();
+                var data = JsonConvert.DeserializeObject<BookViewModel>(dse);
+                data.PhotoList = new System.Collections.Generic.List<Microsoft.AspNetCore.Http.IFormFile>();
+                for (int i = 0; i < ds.Count; i++)
+                {
+                    data.PhotoList.Add(ds[i]);
+                }
+                
+                var response = await _bookService.AddBook(data);
+                
+               
+                    if (response.Success)
+                    {
+                        return Ok(response);
+                    }
+                    return BadRequest(response);
+
             }
-            return BadRequest(response);
+            catch (Exception ex)
+            {
+                return BadRequest("Something went wrong.");
+                throw;
+            }
+            return Ok();
         }
 		[Route("UpdateBook")]
         [HttpPut]
-        public async Task<IActionResult> UpdateBook(BookViewModel bookViewModel)
+        public async Task<IActionResult> UpdateBook([FromBody] BookViewModel bookViewModel)
         {
             var response = await _bookService.UpdateBook(bookViewModel);
             if (response.Success)
@@ -53,7 +84,16 @@ namespace ReadNPassWebAPI.Controllers
             var response = await _bookService.GetAll();
             return Ok(response);
         }
-		[Route("DeleteBook")]
+
+        [Route("GetBookDetail")]
+        [HttpGet]
+        public async Task<IActionResult> GetBookDetail(Guid Id)
+        {
+            var response = await _bookService.GetBookDetail(Id);
+            return Ok(response);
+        }
+
+        [Route("DeleteBook")]
         [HttpDelete]
         public async Task<IActionResult> DeleteBook(Guid Id)
         {

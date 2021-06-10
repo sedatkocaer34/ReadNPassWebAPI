@@ -1,6 +1,7 @@
 package com.example.readnpass.Fragments;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,8 +10,12 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.core.graphics.drawable.RoundedBitmapDrawable;
+import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory;
 import androidx.fragment.app.Fragment;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.target.BitmapImageViewTarget;
 import com.example.readnpass.Activity.BookAddActivity;
 import com.example.readnpass.Activity.BookListActivity;
 import com.example.readnpass.Activity.UserProfileUpdateActivity;
@@ -30,6 +35,7 @@ public class ProfileFragment extends Fragment {
         RelativeLayout btnaddBook = view.findViewById(R.id.btnaddbook);
         RelativeLayout btnlibrary = view.findViewById(R.id.btnaddlibrary);
         ImageView btnupdateprofile = view.findViewById(R.id.btnupdateprofile);
+        final ImageView imgUserphoto = view.findViewById(R.id.imgUserphoto);
 
         TextView textViewNameSurname =view.findViewById(R.id.tv_name);
         TextView txtemail =view.findViewById(R.id.txtemail);
@@ -37,6 +43,18 @@ public class ProfileFragment extends Fragment {
 
         txtadsoyad.setText(userViewModel.getName()+" "+userViewModel.getSurName());
         txtemail.setText(userViewModel.getEmail());
+        Glide.with(getActivity())
+                .load(userViewModel.getDefaultUserProfiePhoto())
+                .asBitmap().centerCrop().into(new BitmapImageViewTarget(imgUserphoto) {
+            @Override
+            protected void setResource(Bitmap resource) {
+                RoundedBitmapDrawable circularBitmapDrawable =
+                        RoundedBitmapDrawableFactory.create(getActivity().getResources(), resource);
+                circularBitmapDrawable.setCircular(true);
+                imgUserphoto.setImageDrawable(circularBitmapDrawable);
+            }
+        });
+
         textViewNameSurname.setText(userViewModel.getName()+" "+userViewModel.getSurName());
         btnaddBook.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,6 +67,7 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), BookListActivity.class);
+                intent.putExtra("userId","287ec72b-05ac-4fcf-1c90-08d91304fd91");
                 startActivity(intent);
             }
         });
@@ -56,6 +75,7 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), UserProfileUpdateActivity.class);
+                intent.putExtra("userId","287ec72b-05ac-4fcf-1c90-08d91304fd91");
                 startActivity(intent);
             }
         });

@@ -18,35 +18,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <Button
+    <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
         android:id="@+id/btnChoose"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        style="@style/loginButton"
+        app:spinning_bar_width="4dp"
+        app:spinning_bar_color="#FFF"
         android:text="Fotoğraf Seç"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView"
-        app:layout_constraintEnd_toStartOf="@id/btnUpload"/>
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/loginViewsMargin"
+        app:spinning_bar_padding="6dp"
+        app:initialCornerAngle="27dp"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@id/textView" />
 
-    <Button
-        android:id="@+id/btnUpload"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="Upload"
-        app:layout_constraintStart_toEndOf="@id/btnChoose"
-        app:layout_constraintTop_toBottomOf="@id/textView"
-        app:layout_constraintEnd_toEndOf="parent"/>
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:visibility="gone"
-        app:layout_constraintStart_toEndOf="@id/btnChoose"
-        app:layout_constraintTop_toBottomOf="@id/textView"
-        app:layout_constraintEnd_toEndOf="parent"/>
+
 
     <GridView
         android:id="@+id/grid_view"
@@ -65,5 +52,19 @@
         app:layout_constraintVertical_bias="0.059">
 
     </GridView>
+
+    <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
+        android:id="@+id/btnAddBookComplete"
+        style="@style/loginButton"
+        android:layout_gravity="center_horizontal"
+        android:text="Yükle"
+        app:initialCornerAngle="27dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:onClick="onAddBookClick"
+        app:layout_constraintStart_toStartOf="parent"
+        app:spinning_bar_color="#FFF"
+        app:spinning_bar_padding="6dp"
+        app:spinning_bar_width="4dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

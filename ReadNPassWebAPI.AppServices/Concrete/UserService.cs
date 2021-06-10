@@ -29,11 +29,14 @@ namespace ReadNPassWebAPI.AppServices.Concrete
         public async Task<CustomResponse<UserViewModel>> AddUser(UserViewModel userViewModel)
         {
             userViewModel.Password = _passwordHash.Hash(userViewModel.Password);
-
-            int repsonse = _userRepository.Add(_mapper.Map<User>(userViewModel));
+            var user = _mapper.Map<User>(userViewModel);
+            user.Id = Guid.NewGuid();
+            user.DefaultUserProfiePhoto = "https://res.cloudinary.com/drnw4orq5/image/upload/v1623351662/defuser_eoimr0.png";
+            int repsonse = _userRepository.Add(user);
             if (repsonse > 0)
             {
-                return new CustomResponse<UserViewModel>(true, "Success");
+                userViewModel.Id = user.Id;
+                return new CustomResponse<UserViewModel>(userViewModel, true, "Success");
             }
             return new CustomResponse<UserViewModel>(false, "Error");
         }
@@ -48,6 +51,12 @@ namespace ReadNPassWebAPI.AppServices.Concrete
             return _mapper.Map<UserViewModel>(_userRepository.GetById(Id));
         }
 
+        public async Task<CustomResponse<UserViewModel>> Login(LoginViewModel loginViewModel)
+        {
+           var user =  _userRepository.Get(x => x.Email == loginViewModel.Email);
+            return   new CustomResponse<UserViewModel>( _mapper.Map<UserViewModel>(user),true, "Success");
+        }
+
         public async Task<CustomResponse<bool>> RemoveUser(Guid Id)
         {
             int repsonse = _userRepository.Delete(_mapper.Map<User>(new User() { Id = Id }));
@@ -60,7 +69,16 @@ namespace ReadNPassWebAPI.AppServices.Concrete
 
         public async Task<CustomResponse<UserViewModel>> UpdateUser(UserViewModel userViewModel)
         {
-            int repsonse = _userRepository.Update(_mapper.Map<User>(userViewModel));
+            var user = _userRepository.GetById(userViewModel.Id);
+            user.Name = userViewModel.Name;
+            user.SurName = userViewModel.Name;
+            user.Email = userViewModel.Email;
+            if(user.Password!= "******")
+            {
+                user.Password = _passwordHash.Hash(userViewModel.Password);
+            }
+        
+            int repsonse = _userRepository.Update(user);
             if (repsonse > 0)
             {
                 return new CustomResponse<UserViewModel>(true, "Success");

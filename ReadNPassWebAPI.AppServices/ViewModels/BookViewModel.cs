@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace ReadNPassWebAPI.AppServices.ViewModels
 {
@@ -18,5 +20,21 @@ namespace ReadNPassWebAPI.AppServices.ViewModels
         [Required(ErrorMessage = "UserLibraryId is required.")]
         [DisplayName("UserLibraryId")]
         public Guid UserLibraryId { get; set; }
+
+        [DisplayName("UserId")]
+        public Guid UserId { get; set; }
+
+        public bool Sales { get; set; }
+
+        public bool Swap { get; set; }
+
+        [DisplayName("BookPhoto")]
+        public string BookPhoto { get; set; }
+
+        public BookDetailViewModel BookDetailViewModel { get; set; }
+        public List<BookPhotoViewModel> BookPhotos { get; set; }
+
+        [JsonIgnore]
+        public List<IFormFile> PhotoList { get; set; }
     }
 }

@@ -20,9 +20,9 @@ namespace ReadNPassWebAPI.Controllers
         }
         [Route("GetUser")]
         [HttpGet]
-        public IActionResult GetUser(Guid Id)
+        public async Task<IActionResult> GetUser(Guid Id)
         {
-            var response = _userService.GetById(Id);
+            var response = await _userService.GetById(Id);
             return Ok(response);
         }
 
@@ -31,6 +31,18 @@ namespace ReadNPassWebAPI.Controllers
         public async Task<IActionResult> AddUser([FromBody] UserViewModel userViewModel)
         {
             var response = await _userService.AddUser(userViewModel);
+            if (response.Success)
+            {
+                return Ok(response);
+            }
+            return BadRequest(response);
+        }
+
+        [Route("Login")]
+        [HttpPost]
+        public async Task<IActionResult> Login([FromBody] LoginViewModel userViewModel)
+        {
+            var response = await _userService.Login(userViewModel);
             if (response.Success)
             {
                 return Ok(response);

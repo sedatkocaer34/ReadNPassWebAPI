@@ -6,6 +6,27 @@ import java.io.Serializable;
 
 public class BookDetailViewModel implements Serializable
 {
+
+    public BookDetailViewModel(String id, String bookId, String bookDescription, String writerName, String bookKind, double bookPrice) {
+        Id = id;
+        BookId = bookId;
+        BookDescription = bookDescription;
+        WriterName = writerName;
+        BookKind = bookKind;
+        BookPrice = bookPrice;
+    }
+
+    public BookDetailViewModel(String bookId, String bookDescription, String writerName, String bookKind, double bookPrice) {
+        BookId = bookId;
+        BookDescription = bookDescription;
+        WriterName = writerName;
+        BookKind = bookKind;
+        BookPrice = bookPrice;
+    }
+
+    public BookDetailViewModel() {
+    }
+
     @SerializedName("id")
     public String Id;
 

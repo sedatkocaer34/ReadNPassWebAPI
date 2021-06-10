@@ -12,8 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
+        android:requestLegacyExternalStorage="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.RegisterActivity">
+        <activity android:name="com.example.readnpass.Activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,9 +24,15 @@
         <activity android:name=".Activity.MessageActivity"/>
         <activity android:name=".Activity.BookAddActivity"/>
         <activity android:name=".Activity.BookListActivity"/>
+
         <activity android:name=".Activity.MainActivity"/>
-        <activity android:name=".Activity.LoginActivity"/>
+        <activity android:name=".Activity.RegisterActivity"/>
+        <activity android:name=".Activity.SuccesActivity"/>
         <activity android:name=".Activity.BookAddPhotoActivity"/>
+        <activity android:name=".Activity.BookUpdateActivity"/>
+        <activity android:name=".Activity.BookDetailActivity"/>
         <activity android:name=".Activity.UserProfileUpdateActivity"/>
+        <activity android:name=".Activity.SendMessageListActivity"/>
+        <activity android:name=".Activity.UserInComeMessageActivity"/>
     </application>
 </manifest>

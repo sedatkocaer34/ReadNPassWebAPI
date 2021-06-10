@@ -14,5 +14,8 @@ namespace ReadNPassWebAPI.AppServices.Interfaces
         Task<CustomResponse<BookClaimViewModel>> AddBookClaim(BookClaimViewModel bookClaimViewModel);
         Task<CustomResponse<BookClaimViewModel>> UpdateBookClaim(BookClaimViewModel bookClaimViewModel);
         Task<CustomResponse<bool>> RemoveBookClaim(Guid Id);
+
+        Task<List<BookClaimViewModel>> GetUserSendClaim(Guid Id);
+        Task<List<BookClaimViewModel>> GetInComeMessageClaim(Guid Id);
     }
 }

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "157057844546",
+    "project_id": "readnpass-68c02",
+    "storage_bucket": "readnpass-68c02.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:157057844546:android:04b20e6d25fe15f47774db",
+        "android_client_info": {
+          "package_name": "com.example.readnpass"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "157057844546-ki17j5s1t9bj049upbtmchkfg3nrfhf4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcN4iGeSKGXm0LuEL61z7FO7Bb7v8lpcg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "157057844546-ki17j5s1t9bj049upbtmchkfg3nrfhf4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

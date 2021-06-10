@@ -54,7 +54,24 @@ namespace ReadNPassWebAPI.Controllers
             var response = await _bookClaimService.GetAll();
             return Ok(response);
         }
-		[Route("DeleteBookClaim")]
+
+        [Route("GetUserSendClaim")]
+        [HttpGet]
+        public async Task<IActionResult> GetUserSendClaim(Guid Id)
+        {
+            var response = await _bookClaimService.GetUserSendClaim(Id);
+            return Ok(response);
+        }
+
+        [Route("GetInComeMessageClaim")]
+        [HttpGet]
+        public async Task<IActionResult> GetInComeMessageClaim(Guid Id)
+        {
+            var response = await _bookClaimService.GetInComeMessageClaim(Id);
+            return Ok(response);
+        }
+
+        [Route("DeleteBookClaim")]
         [HttpDelete]
         public async Task<IActionResult> DeleteBookClaim(Guid Id)
         {

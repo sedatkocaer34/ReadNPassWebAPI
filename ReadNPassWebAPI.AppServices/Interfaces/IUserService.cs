@@ -15,6 +15,8 @@ namespace ReadNPassWebAPI.AppServices.Interfaces
 
         Task<CustomResponse<UserViewModel>> AddUser(UserViewModel userViewModel);
 
+        Task<CustomResponse<UserViewModel>> Login(LoginViewModel loginViewModel);
+
         Task<CustomResponse<UserViewModel>> UpdateUser(UserViewModel userViewModel);
 
         Task<CustomResponse<bool>> RemoveUser(Guid Id);

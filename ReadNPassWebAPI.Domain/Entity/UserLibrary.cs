@@ -9,7 +9,7 @@ namespace ReadNPassWebAPI.Domain.Entity
         public Guid Id { get; set; }
         public string LibraryName { get; private set; }
         public Guid UserId { get; private set; }
-        public virtual List<Book> Books { get; set; }
-        public virtual User User { get; set; }
+       virtual public  List<Book> Books { get; set; }
+        virtual public  User User { get; set; }
     }
 }

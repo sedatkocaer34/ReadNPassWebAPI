@@ -17,6 +17,16 @@ namespace ReadNPassWebAPI.AppServices.ViewModels
         [DisplayName("Kullanıcı Id")]
         public Guid UserId { get; set; }
 
+        public Guid senderUserId { get; set; }
+
+        public string Explain { get; set; }
+
+        public bool IsSales { get; set; }
+
+        public BookViewModel bookViewModel { get; set; }
+
+        public UserViewModel userViewModel { get; set; }
+
         //TODO Enum olarak tanımalanan valueler burada takas ya da kiralama olarak işlenecel ve veri tabanınan o şekilde kayit edilecek.
     }
 }

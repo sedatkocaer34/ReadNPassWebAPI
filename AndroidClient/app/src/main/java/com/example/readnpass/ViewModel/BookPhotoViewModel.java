@@ -15,6 +15,15 @@ public class BookPhotoViewModel implements Serializable
     @SerializedName("bookPhotoUrl")
     public String BookPhotoUrl;
 
+    public BookPhotoViewModel(String bookId, String bookPhotoUrl) {
+        BookId = bookId;
+        BookPhotoUrl = bookPhotoUrl;
+    }
+
+    public BookPhotoViewModel(String bookPhotoUrl) {
+        BookPhotoUrl = bookPhotoUrl;
+    }
+
     public String getId() {
         return Id;
     }

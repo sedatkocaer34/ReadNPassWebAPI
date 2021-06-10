@@ -21,12 +21,22 @@ namespace ReadNPassWebAPI.Core.Data
             }
         }
 
+        public int AddRange(List<TEntity> entity)
+        {
+            using (var context = new TContext())
+            {
+                context.AddRange(entity);
+                return context.SaveChanges();
+            }
+        }
+
         public int Delete(TEntity entity)
         {
             using (var context = new TContext())
             {
-                var deletedEntity = context.Entry(entity);
-                deletedEntity.State = EntityState.Deleted;
+                context.Remove(entity);
+                //var deletedEntity = context.Entry(entity);
+                //deletedEntity.State = EntityState.Deleted;
                 return context.SaveChanges();
             }
         }
@@ -35,7 +45,7 @@ namespace ReadNPassWebAPI.Core.Data
         {
             using (var context = new TContext())
             {
-                return context.Set<TEntity>().SingleOrDefault(filter);
+                return context.Set<TEntity>().FirstOrDefault(filter);
             }
         }
 

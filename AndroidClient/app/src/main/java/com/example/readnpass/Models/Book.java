@@ -21,6 +21,28 @@ public class Book implements Serializable
     @SerializedName("userLibraryId")
     public String UserLibraryId;
 
+    @SerializedName("sales")
+    public boolean Sales ;
+
+    @SerializedName("swap")
+    public boolean Swap ;
+
+    public boolean isSales() {
+        return Sales;
+    }
+
+    public void setSales(boolean sales) {
+        Sales = sales;
+    }
+
+    public boolean isSwap() {
+        return Swap;
+    }
+
+    public void setSwap(boolean swap) {
+        Swap = swap;
+    }
+
     public String getId() {
         return Id;
     }

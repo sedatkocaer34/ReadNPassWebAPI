@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +11,7 @@ using Microsoft.Extensions.Logging;
 using ReadNPass.Application.AutoMapper;
 using ReadNPassWebAPI.AppServices.Concrete;
 using ReadNPassWebAPI.AppServices.Interfaces;
+using ReadNPassWebAPI.Core.Helpers;
 using ReadNPassWebAPI.Core.Security;
 using ReadNPassWebAPI.Data.Concrete;
 using ReadNPassWebAPI.Data.Interfaces;
@@ -56,10 +58,16 @@ namespace ReadNPassWebAPI
             services.AddScoped<ReadNPassWebAPIDataContext>();
 
             services.AddScoped<IPasswordHash, PasswordHash>();
+            services.AddScoped<ICloudinaryAPI, CloudinaryAPI>();
 
             services.AddDbContext<ReadNPassWebAPIDataContext>(options => options.UseSqlServer("DefaultConnection"));
 
             services.AddAutoMapper(typeof(ModelToViewModelMap), typeof(ViewModelToModelMap));
+
+            services.Configure<FormOptions>(options =>
+            {
+                options.MemoryBufferThreshold = Int32.MaxValue;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

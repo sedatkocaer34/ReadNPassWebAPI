@@ -29,7 +29,16 @@ namespace ReadNPassWebAPI.Data.SystemDataContext
             foreach (var relationship in modelBuilder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys()))
             {
                 relationship.DeleteBehavior = DeleteBehavior.Restrict;
+
             }
+            modelBuilder.Entity<Book>()
+                .HasOne<BookDetail>(c => c.BookDetail)
+                .WithOne(x => x.Book).OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<Book>()
+               .HasMany<BookPhoto>(c => c.BookPhotos)
+               .WithOne(x => x.Book).OnDelete(DeleteBehavior.Cascade);
+              
         }
 
 

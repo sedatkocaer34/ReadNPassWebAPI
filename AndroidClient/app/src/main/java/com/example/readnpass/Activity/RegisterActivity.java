@@ -2,6 +2,7 @@ package com.example.readnpass.Activity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -30,10 +31,13 @@ public class RegisterActivity extends AppCompatActivity {
     EditText editTextName,editTextSurName,editTextEmail,editTextPassword;
     Context context = this;
     ProgressBar   pgsBar ;
+    SharedPreferences sharedPref ;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        sharedPref = this.getSharedPreferences("sharedPref",Context.MODE_PRIVATE);
         editTextName = findViewById(R.id.editTextName);
         pgsBar = (ProgressBar) findViewById(R.id.progress_loader);
         pgsBar.setVisibility(View.GONE);
@@ -67,7 +71,10 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<BaseResponse<UserViewModel>> call, Response<BaseResponse<UserViewModel>> response) {
                 Intent intent = new Intent(context,MainActivity.class);
-                intent.putExtra("userModel",userViewModel);
+                intent.putExtra("userModel",response.body().getData());
+                SharedPreferences.Editor editor = sharedPref.edit();
+                editor.putString("userId",response.body().getData().getId());
+                editor.commit();
                 startActivity(intent);
                 hideLoading();
             }

@@ -5,7 +5,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".Fragments.HomeFragment">
+        tools:context=".Fragments.ProfileFragment">
 
     <RelativeLayout
         android:id="@+id/rellay1"
@@ -23,6 +23,7 @@
             android:background="@drawable/circle_border">
 
             <ImageView
+                android:id="@+id/imgUserphoto"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:layout_margin="9dp"

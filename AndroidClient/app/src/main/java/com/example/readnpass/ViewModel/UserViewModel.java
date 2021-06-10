@@ -27,6 +27,14 @@ public class UserViewModel implements Serializable
         this.longitudeLatidute = longitudeLatidute;
     }
 
+    public UserViewModel(String id, String name, String surName, String password, String email) {
+        Id = id;
+        Name = name;
+        SurName = surName;
+        Password = password;
+        Email = email;
+    }
+
     @SerializedName("id")
     public String Id;
 

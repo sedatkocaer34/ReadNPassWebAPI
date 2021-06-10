@@ -1,13 +1,13 @@
 package com.example.readnpass.Activity;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.FileUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -22,8 +22,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import com.example.readnpass.Adapter.FileUtils;
 import com.example.readnpass.Adapter.PhotoAdapter;
+import com.example.readnpass.Interfaces.ApiClient;
+import com.example.readnpass.Interfaces.IRestService;
 import com.example.readnpass.R;
+import com.example.readnpass.Response.BaseResponse;
+import com.example.readnpass.ViewModel.BookPhotoViewModel;
+import com.example.readnpass.ViewModel.BookViewModel;
+import com.example.readnpass.ViewModel.UserViewModel;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -44,26 +51,24 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class BookAddPhotoActivity extends AppCompatActivity {
     private static final String TAG = BookAddPhotoActivity.class.getSimpleName();
 
+    private IRestService restService;
     private ProgressBar mProgressBar;
-    private Button btnChoose, btnUpload;
+    private Button btnChoose;
     GridView gridView;
     private ArrayList<Uri> arrayList;
-
+    BookViewModel bookViewModel;
     private final int REQUEST_CODE_PERMISSIONS  = 1;
     private final int REQUEST_CODE_READ_STORAGE = 2;
-
+    Context context = this;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activty_add_book_photo);
-
-
-         gridView = (GridView) findViewById(R.id.grid_view);
-
-
+        bookViewModel = (BookViewModel) getIntent().getSerializableExtra("bookViewModel");
+        gridView = (GridView) findViewById(R.id.grid_view);
         mProgressBar = findViewById(R.id.progressBar);
-
         btnChoose = findViewById(R.id.btnChoose);
+        restService = ApiClient.getClient().create(IRestService.class);
         btnChoose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,8 +80,38 @@ public class BookAddPhotoActivity extends AppCompatActivity {
                 }
             }
         });
-        btnUpload = findViewById(R.id.btnUpload);
         arrayList = new ArrayList<>();
+    }
+
+    public void onAddBookClick(View view)
+    {
+       List<MultipartBody.Part> bookPhotoViewModel = new ArrayList<>();
+        if (arrayList != null) {
+            // create part for file (photo, video, ...)
+            for (int i = 0; i < arrayList.size(); i++) {
+                bookPhotoViewModel.add(prepareFilePart("image"+i, arrayList.get(i)));
+            }
+        }
+
+        Call<BaseResponse<BookViewModel>> call =  restService.AddBook(bookPhotoViewModel,bookViewModel);
+        call.enqueue(new Callback<BaseResponse<BookViewModel>>() {
+            @Override
+            public void onResponse(Call<BaseResponse<BookViewModel>> call, Response<BaseResponse<BookViewModel>> response) {
+                Log.i("countdata", "onAddBookClick: "+response.body().isSuccess());
+                if(response.body().isSuccess())
+                {
+                    Intent intent  = new Intent(context,SuccesActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<BaseResponse<BookViewModel>> call, Throwable t) {
+                Log.i("bookhata", "onResponse: "+t);
+            }
+        });
     }
 
     private void showChooser() {
@@ -130,18 +165,14 @@ public class BookAddPhotoActivity extends AppCompatActivity {
         }
     }
 
-
-
     private void showProgress() {
         mProgressBar.setVisibility(View.VISIBLE);
         btnChoose.setEnabled(false);
-        btnUpload.setVisibility(View.GONE);
     }
 
     private void hideProgress() {
         mProgressBar.setVisibility(View.GONE);
         btnChoose.setEnabled(true);
-        btnUpload.setVisibility(View.VISIBLE);
     }
 
     private void askForPermission() {
@@ -215,5 +246,17 @@ public class BookAddPhotoActivity extends AppCompatActivity {
         });
 
         dialog.show();
+    }
+
+    @NonNull
+    private MultipartBody.Part prepareFilePart(String partName, Uri fileUri) {
+        // use the FileUtils to get the actual file by uri
+        File file = com.example.readnpass.Adapter.FileUtils.getFile(this, fileUri);
+
+        // create RequestBody instance from file
+        RequestBody requestFile = RequestBody.create (MediaType.parse(FileUtils.MIME_TYPE_IMAGE), file);
+
+        // MultipartBody.Part is used to send also the actual file name
+        return MultipartBody.Part.createFormData(partName, file.getName(), requestFile);
     }
 }

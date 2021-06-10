@@ -10,8 +10,14 @@ namespace ReadNPassWebAPI.Domain.Entity
 
         public Guid UserId { get; set; }
 
-        public virtual Book Book { get; set; }
+        public Guid senderUserId { get; set; }
 
-        public virtual User User { get; set; }
+        public string Explain { get; set; }
+
+        public bool IsSales { get; set; }
+
+        virtual public  Book Book { get; set; }
+
+        virtual public  User User { get; set; }
     }
 }

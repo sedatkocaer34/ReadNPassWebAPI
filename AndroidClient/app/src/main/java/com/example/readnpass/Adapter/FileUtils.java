@@ -23,11 +23,11 @@ public class FileUtils {
     private static final String TAG = "FileUtils";
     private static final boolean DEBUG = false; // Set to true to enable logging
 
-    static final String MIME_TYPE_AUDIO = "audio/*";
-    static final String MIME_TYPE_TEXT = "text/*";
-    static final String MIME_TYPE_IMAGE = "image/*";
-    static final String MIME_TYPE_VIDEO = "video/*";
-    static final String MIME_TYPE_APP = "application/*";
+  public static final String MIME_TYPE_AUDIO = "audio/*";
+  public static final String MIME_TYPE_TEXT = "text/*";
+  public static final String MIME_TYPE_IMAGE = "image/*";
+  public static final String MIME_TYPE_VIDEO = "video/*";
+  public static final String MIME_TYPE_APP = "application/*";
 
     public static final String HIDDEN_PREFIX = ".";
 
@@ -52,7 +52,7 @@ public class FileUtils {
         }
     }
 
-    static File getFile (Context context, Uri uri) {
+    public static File getFile (Context context, Uri uri) {
         String path = getPath(context, uri);
         assert path != null;
         return new File(path);

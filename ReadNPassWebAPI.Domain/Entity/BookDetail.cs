@@ -11,6 +11,6 @@ namespace ReadNPassWebAPI.Domain.Entity
         public string WriterName { get; private set; }
         public string BookKind { get; private set; }
         public double BookPrice { get; private set; }
-        public virtual Book Book { get; set; }
+        virtual public  Book Book { get; set; }
     }
 }

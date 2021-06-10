@@ -42,7 +42,7 @@
                 style="@style/parent"
                 android:layout_marginTop="@dimen/loginViewsMargin">
                 <EditText
-                    android:id="@+id/editTextBookName"
+                    android:id="@+id/editTextName"
                     style="@style/modifiedEditText"
                     android:inputType="textEmailAddress"
                     android:maxLines="1"
@@ -54,11 +54,11 @@
                 style="@style/parent"
                 android:layout_marginTop="@dimen/loginViewsMargin">
                 <EditText
-                    android:id="@+id/editTextWriterName"
+                    android:id="@+id/editTextSurname"
                     style="@style/modifiedEditText"
                     android:hint="Soyisim"
                     android:maxLines="1"
-                    android:inputType="textPassword"/>
+                    android:inputType="text"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -66,11 +66,11 @@
                 style="@style/parent"
                 android:layout_marginTop="@dimen/loginViewsMargin">
                 <EditText
-                    android:id="@+id/editTextBook"
+                    android:id="@+id/editTextEmail"
                     style="@style/modifiedEditText"
                     android:hint="Email"
                     android:maxLines="1"
-                    android:inputType="textPassword"/>
+                    android:inputType="text"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -78,7 +78,7 @@
                 style="@style/parent"
                 android:layout_marginTop="@dimen/loginViewsMargin">
                 <EditText
-                    android:id="@+id/editTextBookKind"
+                    android:id="@+id/editTextPassword"
                     style="@style/modifiedEditText"
                     android:hint="Şifre"
                     android:maxLines="1"
@@ -91,7 +91,7 @@
                 style="@style/parent"
                 android:layout_marginTop="@dimen/loginViewsMargin">
                 <EditText
-                    android:id="@+id/editTextBookPrice"
+                    android:id="@+id/editTextPasswordRef"
                     style="@style/modifiedEditText"
                     android:hint="Şifre Tekrar"
                     android:maxLines="1"
@@ -101,7 +101,7 @@
 
 
             <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
-                android:id="@+id/cirLoginButton"
+                android:id="@+id/updateprofilebutton"
                 style="@style/loginButton"
                 app:spinning_bar_width="4dp"
                 app:spinning_bar_color="#FFF"

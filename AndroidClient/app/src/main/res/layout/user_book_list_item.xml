@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="10dp"
+    android:id="@+id/cardView"
+    android:layout_width="match_parent"
+    android:layout_height="160dp"
+    android:layout_marginBottom="10dp"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:background="#C5CAE9"
+    app:cardCornerRadius="25dp"
+    android:foreground="?attr/selectableItemBackground"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/bookphoto"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:scaleType="centerCrop"
+            android:src="@android:drawable/star_big_on" />
+
+
+
+        <TextView
+            android:id="@+id/title"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginLeft="17dp"
+            android:layout_toRightOf="@+id/bookphoto"
+            android:text="Title"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/bookphoto"
+            android:textColor="#000000"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="Movie from IMDB 250"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:textSize="14sp" />
+        <TextView
+            android:id="@+id/takas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/desc"
+            android:layout_marginLeft="16dp"
+            android:layout_toRightOf="@+id/bookphoto"
+            android:layout_marginTop="10dp"
+            android:textColor="#000000"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="Takas"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:id="@+id/imgTakas"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="8dp"
+            android:layout_below="@+id/desc"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/takas"
+            android:src="@drawable/ic_check_16" />
+
+        <TextView
+            android:id="@+id/satilik"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/desc"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/takas"
+            android:textColor="#000000"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="Satılık"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:id="@+id/imgsatilik"
+            android:layout_width="24dp"
+            android:layout_marginTop="10dp"
+            android:layout_height="24dp"
+            android:layout_marginLeft="8dp"
+            android:layout_below="@+id/desc"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/satilik"
+            android:src="@drawable/ic_check_16" />
+
+
+        <TextView
+            android:id="@+id/updateicon"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/takas"
+            android:layout_marginLeft="16dp"
+            android:layout_toRightOf="@+id/bookphoto"
+            android:textColor="#000000"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:drawableLeft="@drawable/ic_baseline_update_24"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/removeicon"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/satilik"
+            android:layout_marginLeft="16dp"
+            android:layout_toRightOf="@+id/takas"
+            android:drawableLeft="@drawable/ic_baseline_delete_24"
+            android:textColor="#000000"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:textSize="14sp" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

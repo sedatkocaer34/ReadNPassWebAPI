@@ -26,9 +26,7 @@ namespace ReadNPassWebAPI.AppServices.ViewModels
         [Required(ErrorMessage = "Email zorunludur.")]
         [DisplayName("Email")]
         public string Email { get; set; }
-        // Bu kısıma ne yazacağımı bulamadım
-        [Required(ErrorMessage = "Kitap ismi zorunludur.")]
-        [DisplayName("Kitap ismi")]
+        
         public string DefaultUserProfiePhoto { get; set; }
         public double locationLatidute { get; set; }
         public double longitudeLatidute { get; set; }

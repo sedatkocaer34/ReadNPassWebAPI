@@ -1,40 +1,51 @@
 package com.example.readnpass.Interfaces;
 
-import com.example.readnpass.Models.User;
 import com.example.readnpass.Response.BaseResponse;
 import com.example.readnpass.ViewModel.BookClaimViewModel;
 import com.example.readnpass.ViewModel.BookDetailViewModel;
 import com.example.readnpass.ViewModel.BookPhotoViewModel;
 import com.example.readnpass.ViewModel.BookViewModel;
+import com.example.readnpass.ViewModel.LoginViewModel;
 import com.example.readnpass.ViewModel.UserLibraryViewModel;
 import com.example.readnpass.ViewModel.UserViewModel;
 
+import java.util.List;
+
+import okhttp3.MultipartBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
+import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
+import retrofit2.http.Part;
+import retrofit2.http.Query;
 
 public interface IRestService
 {
     //User
     @GET("/api/user/getUser")
-    Call<UserViewModel> GetUser(int Id);
+    Call<UserViewModel> GetUser(@Query("Id")  String Id);
 
     @Headers({"Content-Type: application/json"})
     @POST("/api/user/addUser")
     Call<BaseResponse<UserViewModel>> AddUser(@Body UserViewModel userViewModel);
 
+    @Headers({"Content-Type: application/json"})
     @PUT("/api/user/updateUser")
-    Call<BaseResponse<UserViewModel>> UpdateUser(UserViewModel userViewModel);
+    Call<BaseResponse<UserViewModel>> UpdateUser(@Body UserViewModel userViewModel);
 
     @GET("/api/user/getAllUser")
     Call<UserViewModel> GetAllUser(int Id);
 
     @DELETE("/api/user/deleteUser")
     Call<BaseResponse<UserViewModel>> DeleteUser(UserViewModel userViewModel);
+
+    @Headers({"Content-Type: application/json"})
+    @POST("/api/bookClaim/login")
+    Call<BaseResponse<UserViewModel>> Login(@Body LoginViewModel loginViewModel);
 
 
     //UserLibrary
@@ -54,20 +65,28 @@ public interface IRestService
     Call<BaseResponse<UserLibraryViewModel>> DeleteUserLibrary(UserLibraryViewModel userLibraryViewModel);
 
     //Book
+
     @GET("/api/book/getBook")
-    Call<BookViewModel> GetBook(int Id);
+    Call<BookViewModel> GetBook(@Query("Id") String  Id);
 
-    @POST("/api/book/addUserLibrary")
-    Call<BaseResponse<BookViewModel>> AddBook(BookViewModel bookViewModel);
+    @GET("/api/book/GetUserBook")
+    Call<List<BookViewModel>> GetUserBook(@Query("Id") String  Id);
+    @Multipart
+    @POST("/api/book/addBook")
+    Call<BaseResponse<BookViewModel>> AddBook(@Part List<MultipartBody.Part> filePart, @Part("bookViewModel") BookViewModel bookViewModel);
 
+    @Headers({"Content-Type: application/json"})
     @PUT("/api/book/updateBook")
-    Call<BaseResponse<BookViewModel>> UpdateBook(BookViewModel bookViewModel);
+    Call<BaseResponse<BookViewModel>> UpdateBook(@Body BookViewModel bookViewModel);
 
     @GET("/api/book/getAllBook")
-    Call<BookViewModel> GetAllBook(int Id);
+    Call<List<BookViewModel>> GetAllBook();
+
+    @GET("/api/book/GetBookDetail")
+    Call<BookViewModel> GetBookDetail(@Query("Id") String  Id);
 
     @DELETE("/api/book/deleteBook")
-    Call<BaseResponse<BookViewModel>> DeleteBook(BookViewModel bookViewModel);
+    Call<BaseResponse<Boolean>> DeleteBook(@Query("Id") String  Id);
 
     //BookPhoto
     @GET("/api/bookPhoto/getBookPhoto")
@@ -89,14 +108,23 @@ public interface IRestService
     @GET("/api/bookClaim/getBookClaim")
     Call<BookClaimViewModel> GetBookClaim(int Id);
 
+
+    @GET("/api/bookClaim/GetUserSendClaim")
+    Call<List<BookClaimViewModel>> GetUserSendClaim(@Query("Id") String Id);
+
+    @GET("/api/bookClaim/GetInComeMessageClaim")
+    Call<List<BookClaimViewModel>> GetInComeMessageClaim(@Query("Id") String Id);
+
+
+    @Headers({"Content-Type: application/json"})
     @POST("/api/bookClaim/addBookClaim")
-    Call<BaseResponse<BookClaimViewModel>> AddBookClaim(BookClaimViewModel bookClaimViewModel);
+    Call<BaseResponse<BookClaimViewModel>> AddBookClaim(@Body  BookClaimViewModel bookClaimViewModel);
 
     @PUT("/api/bookClaim/updateUserLibrary")
     Call<BaseResponse<BookClaimViewModel>> UpdateBookClaim(BookClaimViewModel bookClaimViewModel);
 
     @GET("/api/bookClaim/getAllBookClaim")
-    Call<BookClaimViewModel> GetAllBookClaim(int Id);
+    Call<List<BookClaimViewModel>> GetAllBookClaim(String Id);
 
     @DELETE("/api/bookClaim/deleteBookClaim")
     Call<BaseResponse<BookClaimViewModel>> DeleteBookClaim(BookClaimViewModel bookClaimViewModel);

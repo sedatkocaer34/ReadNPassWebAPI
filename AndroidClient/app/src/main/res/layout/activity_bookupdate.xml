@@ -65,7 +65,7 @@
                     style="@style/modifiedEditText"
                     android:hint="Yazar Adı"
                     android:maxLines="1"
-                    android:inputType="textPassword"/>
+                    android:inputType="text"/>
             </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -78,7 +78,7 @@
                     style="@style/modifiedEditText"
                     android:hint="Kitap Türü"
                     android:maxLines="1"
-                    android:inputType="textPassword"/>
+                    android:inputType="text"/>
             </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -91,15 +91,39 @@
                     style="@style/modifiedEditText"
                     android:hint="Kitap Fiyatı"
                     android:maxLines="1"
-                    android:inputType="textPassword"/>
+                    android:inputType="text"/>
             </com.google.android.material.textfield.TextInputLayout>
 
+            <LinearLayout android:layout_width="match_parent"
+
+                android:layout_height="wrap_content">
+
+                <CheckBox
+                    android:id="@+id/checkBoxSales"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Satılık"
+                    android:checked="false">
+
+                </CheckBox>
+
+                <CheckBox
+                    android:id="@+id/checkBoxSwap"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Takas"
+                    android:checked="false">
+
+                </CheckBox>
+
+            </LinearLayout>
+
             <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
-                android:id="@+id/cirLoginButton"
+                android:id="@+id/btnupdatebutton"
                 style="@style/loginButton"
                 app:spinning_bar_width="4dp"
                 app:spinning_bar_color="#FFF"
-                android:text="Devam Et"
+                android:text="Güncelle"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/loginViewsMargin"
                 app:spinning_bar_padding="6dp"

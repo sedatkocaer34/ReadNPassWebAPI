@@ -15,17 +15,24 @@ namespace ReadNPassWebAPI.AppServices.Concrete
     {
 
         private IBookClaimRepository _bookClaimRepository;
+        private IBookRepository _bookRepository;
+        private IUserRepository _userRepository;
         private IMapper _mapper;
 
-        public BookClaimService(IBookClaimRepository bookClaimRepository, IMapper mapper)
+        public BookClaimService(IBookClaimRepository bookClaimRepository, IMapper mapper, IBookRepository bookRepository,
+            IUserRepository userRepository)
         {
             this._bookClaimRepository = bookClaimRepository;
+            this._bookRepository = bookRepository;
+            this._userRepository = userRepository;
             this._mapper = mapper;
         }
 
         public async Task<CustomResponse<BookClaimViewModel>> AddBookClaim(BookClaimViewModel bookClaimViewModel)
         {
-            int repsonse = _bookClaimRepository.Add(_mapper.Map<BookClaim>(bookClaimViewModel));
+           var bookclaim =  _mapper.Map<BookClaim>(bookClaimViewModel);
+            bookclaim.Id = Guid.NewGuid();
+            int repsonse = _bookClaimRepository.Add(bookclaim);
             if (repsonse > 0)
             {
                 return new CustomResponse<BookClaimViewModel>(true, "Success");
@@ -41,6 +48,35 @@ namespace ReadNPassWebAPI.AppServices.Concrete
         public async Task<BookClaimViewModel> GetById(Guid Id)
         {
             return _mapper.Map<BookClaimViewModel>(_bookClaimRepository.GetById(Id));
+        }
+
+        public async Task<List<BookClaimViewModel>> GetInComeMessageClaim(Guid Id)
+        {
+            var bookclaim = _mapper.Map<List<BookClaimViewModel>>(_bookClaimRepository.GetList(x => x.UserId == Id));
+
+            foreach (var item in bookclaim)
+            {
+                item.bookViewModel = _mapper.Map<BookViewModel>(_bookRepository.Get(x => x.Id == item.BookId));
+                item.userViewModel = _mapper.Map<UserViewModel>(_userRepository.Get(x => x.Id == item.senderUserId));
+
+            }
+
+            return bookclaim;
+        }
+
+        public async Task<List<BookClaimViewModel>> GetUserSendClaim(Guid Id)
+        {
+           var bookclaim = _mapper.Map < List<BookClaimViewModel >> (_bookClaimRepository.GetList(x => x.senderUserId == Id));
+
+            foreach (var item in bookclaim)
+            {
+                item.bookViewModel = _mapper.Map<BookViewModel>(_bookRepository.Get(x => x.Id == item.BookId));
+                item.userViewModel = _mapper.Map<UserViewModel>(_userRepository.Get(x => x.Id == item.UserId));
+                
+            }
+
+            return bookclaim;
+          
         }
 
         public async Task<CustomResponse<bool>> RemoveBookClaim(Guid Id)

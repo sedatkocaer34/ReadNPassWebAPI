@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 
 
+
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
@@ -24,6 +25,7 @@ android {
 }
 
 dependencies {
+
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
@@ -44,5 +46,15 @@ dependencies {
 
     implementation 'io.reactivex.rxjava3:rxjava:3.0.0'
     implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
+    implementation 'com.firebaseui:firebase-ui:0.6.0'
+
+    // Firebase SDK
+    implementation platform('com.google.firebase:firebase-bom:26.6.0')
+    implementation 'com.google.firebase:firebase-database-ktx'
+    implementation 'com.google.firebase:firebase-storage-ktx'
+    implementation 'com.google.firebase:firebase-auth-ktx'
+
+    // Firebase UI Library
+    implementation 'com.firebaseui:firebase-ui-database:7.1.1'
 
 }

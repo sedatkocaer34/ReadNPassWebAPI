@@ -290,3 +290,11 @@ C:\donemProjesi\ReadNPassWebAPI\ReadNPassWebAPI\obj\Debug\netcoreapp3.1\ReadNPas
 C:\donemProjesi\ReadNPassWebAPI\ReadNPassWebAPI\obj\Debug\netcoreapp3.1\ReadNPassWebAPI.dll
 C:\donemProjesi\ReadNPassWebAPI\ReadNPassWebAPI\obj\Debug\netcoreapp3.1\ReadNPassWebAPI.pdb
 C:\donemProjesi\ReadNPassWebAPI\ReadNPassWebAPI\obj\Debug\netcoreapp3.1\ReadNPassWebAPI.genruntimeconfig.cache
+C:\Users\sedat\source\repos\ReadNPassWebAPI\ReadNPassWebAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\sedat\source\repos\ReadNPassWebAPI\ReadNPassWebAPI\bin\Debug\netcoreapp3.1\System.IO.Pipelines.dll
+C:\Users\sedat\source\repos\ReadNPassWebAPI\ReadNPassWebAPI\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\sedat\source\repos\ReadNPassWebAPI\ReadNPassWebAPI\bin\Debug\netcoreapp3.1\CloudinaryDotNet.dll
+C:\Users\sedat\source\repos\ReadNPassWebAPI\ReadNPassWebAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.WebEncoders.dll
+C:\Users\sedat\source\repos\ReadNPassWebAPI\ReadNPassWebAPI\bin\Debug\netcoreapp3.1\System.Text.Encodings.Web.dll
+C:\Users\sedat\source\repos\ReadNPassWebAPI\ReadNPassWebAPI\bin\Debug\netcoreapp3.1\Castle.Core.dll
+C:\Users\sedat\source\repos\ReadNPassWebAPI\ReadNPassWebAPI\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Proxies.dll

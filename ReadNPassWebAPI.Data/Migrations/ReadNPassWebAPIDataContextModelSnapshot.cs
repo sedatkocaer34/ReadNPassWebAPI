@@ -34,7 +34,16 @@ namespace ReadNPassWebAPI.Data.Migrations
                     b.Property<DateTime>("BookUpdateDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid?>("UserId")
+                    b.Property<bool>("Sales")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("Sell")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("Swap")
+                        .HasColumnType("bit");
+
+                    b.Property<Guid>("UserId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid>("UserLibraryId")
@@ -58,7 +67,16 @@ namespace ReadNPassWebAPI.Data.Migrations
                     b.Property<Guid>("BookId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("Explain")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsSales")
+                        .HasColumnType("bit");
+
                     b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("senderUserId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
@@ -174,7 +192,8 @@ namespace ReadNPassWebAPI.Data.Migrations
                     b.HasOne("ReadNPassWebAPI.Domain.Entity.User", "User")
                         .WithMany("Books")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.HasOne("ReadNPassWebAPI.Domain.Entity.UserLibrary", "UserLibrary")
                         .WithMany("Books")
@@ -211,7 +230,7 @@ namespace ReadNPassWebAPI.Data.Migrations
                     b.HasOne("ReadNPassWebAPI.Domain.Entity.Book", "Book")
                         .WithOne("BookDetail")
                         .HasForeignKey("ReadNPassWebAPI.Domain.Entity.BookDetail", "BookId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Book");
@@ -222,7 +241,7 @@ namespace ReadNPassWebAPI.Data.Migrations
                     b.HasOne("ReadNPassWebAPI.Domain.Entity.Book", "Book")
                         .WithMany("BookPhotos")
                         .HasForeignKey("BookId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Book");

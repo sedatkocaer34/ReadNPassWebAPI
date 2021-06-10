@@ -11,7 +11,11 @@ namespace ReadNPassWebAPI.AppServices.Interfaces
     {
         Task<IEnumerable<BookViewModel>> GetAll();
 
+        Task<BookViewModel> GetBookDetail(Guid Id);
+
         Task<BookViewModel> GetById(Guid Id);
+
+        Task<List<BookViewModel>> GetUserBook(Guid UserId);
 
         Task<CustomResponse<BookPhotoViewModel>> AddBook(BookViewModel bookViewModel);
 

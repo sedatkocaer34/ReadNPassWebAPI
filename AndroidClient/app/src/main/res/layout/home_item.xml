@@ -14,13 +14,13 @@
     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
     <RelativeLayout
-
+        android:id="@+id/homeviewitem"
         android:layout_width="match_parent"
         android:gravity="center"
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/avatar"
+            android:id="@+id/bookphoto"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_alignParentLeft="true"
@@ -33,7 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="17dp"
-            android:layout_toRightOf="@+id/avatar"
+            android:layout_toRightOf="@+id/bookphoto"
             android:text="Title"
             android:textAppearance="?attr/textAppearanceListItem"
             android:textColor="#000000"
@@ -46,7 +46,7 @@
             android:layout_below="@+id/title"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="10dp"
-            android:layout_toRightOf="@+id/avatar"
+            android:layout_toRightOf="@+id/bookphoto"
             android:textColor="#000000"
             android:ellipsize="end"
             android:singleLine="true"
@@ -59,7 +59,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/desc"
             android:layout_marginLeft="16dp"
-            android:layout_toRightOf="@+id/avatar"
+            android:layout_toRightOf="@+id/bookphoto"
             android:layout_marginTop="10dp"
             android:textColor="#000000"
             android:ellipsize="end"
@@ -69,7 +69,7 @@
             android:textSize="14sp" />
 
         <ImageView
-            android:id="@+id/check"
+            android:id="@+id/imgTakas"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_marginTop="10dp"
@@ -95,7 +95,7 @@
             android:textSize="14sp" />
 
         <ImageView
-            android:id="@+id/check2"
+            android:id="@+id/imgsatilik"
             android:layout_width="24dp"
             android:layout_marginTop="10dp"
             android:layout_height="24dp"
@@ -103,36 +103,7 @@
             android:layout_below="@+id/desc"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@+id/satilik"
-            android:src="@drawable/ic_check_16" />
+            android:src="@drawable/ic_baseline_cancel_24" />
 
-        <TextView
-            android:id="@+id/konum"
-            android:layout_marginTop="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/takas"
-            android:layout_marginLeft="16dp"
-            android:layout_toRightOf="@+id/avatar"
-            android:textColor="#000000"
-            android:ellipsize="end"
-            android:singleLine="true"
-            android:text="Konum :"
-            android:textAppearance="?attr/textAppearanceListItem"
-            android:textSize="14sp" />
-
-        <TextView
-            android:id="@+id/konumisim"
-            android:layout_width="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/takas"
-            android:layout_marginLeft="16dp"
-            android:layout_toRightOf="@+id/konum"
-            android:textColor="#000000"
-            android:ellipsize="end"
-            android:singleLine="true"
-            android:text="Eyüp/İSTANBUL"
-            android:textAppearance="?attr/textAppearanceListItem"
-            android:textSize="14sp" />
     </RelativeLayout>
 </androidx.cardview.widget.CardView>
