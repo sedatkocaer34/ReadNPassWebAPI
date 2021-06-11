@@ -157,7 +157,7 @@ public class BookDetailActivity extends AppCompatActivity
                 sellButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        if(response.body().isSwap())
+                        if(response.body().isSales())
                         {
                             AlertDialog.Builder builder = new AlertDialog.Builder(context);
 

@@ -1,6 +1,8 @@
 package com.example.readnpass.Activity;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -49,7 +51,8 @@ public class UserProfileUpdateActivity extends AppCompatActivity
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // back button pressed
+                Intent returnIntent = new Intent();
+                setResult(Activity.RESULT_CANCELED, returnIntent);
                 finish();
             }
         });
@@ -66,6 +69,7 @@ public class UserProfileUpdateActivity extends AppCompatActivity
                 {
 
                     UpdateProfile();
+
                 }
             }
         });
@@ -94,7 +98,7 @@ public class UserProfileUpdateActivity extends AppCompatActivity
 
     private  void UpdateProfile()
     {
-        UserViewModel userViewModel = new UserViewModel(userId,editTextName.getText().toString(),editTextSurName.getText().toString(),editTextPassword.getText().toString(),editTextEmail.getText().toString());
+        final UserViewModel userViewModel = new UserViewModel(userId,editTextName.getText().toString(),editTextSurName.getText().toString(),editTextPassword.getText().toString(),editTextEmail.getText().toString());
         Call<BaseResponse<UserViewModel>> call =  restService.UpdateUser(userViewModel);
         call.enqueue(new Callback<BaseResponse<UserViewModel>>() {
             @Override
@@ -102,6 +106,10 @@ public class UserProfileUpdateActivity extends AppCompatActivity
                 if(response.body().isSuccess())
                 {
                     Toast.makeText(context, "Profil Güncellendi.", Toast.LENGTH_SHORT).show();
+                    Intent returnIntent = new Intent();
+                    returnIntent.putExtra("userModel",userViewModel);
+                    setResult(Activity.RESULT_OK,returnIntent);
+                    finish();
                 }
             }
 

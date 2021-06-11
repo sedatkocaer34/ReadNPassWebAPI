@@ -1,6 +1,9 @@
 package com.example.readnpass.Fragments;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.annotation.Nullable;
 import androidx.core.graphics.drawable.RoundedBitmapDrawable;
 import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory;
 import androidx.fragment.app.Fragment;
@@ -18,15 +22,20 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.BitmapImageViewTarget;
 import com.example.readnpass.Activity.BookAddActivity;
 import com.example.readnpass.Activity.BookListActivity;
+import com.example.readnpass.Activity.LoginActivity;
 import com.example.readnpass.Activity.UserProfileUpdateActivity;
 import com.example.readnpass.R;
 import com.example.readnpass.ViewModel.UserViewModel;
 
 public class ProfileFragment extends Fragment {
     UserViewModel userViewModel;
+    int LAUNCH_SECOND_ACTIVITY = 1;
+    TextView textViewNameSurname,txtemail,txtadsoyad,logoutbutton;
+    SharedPreferences sharedPref ;
     public ProfileFragment(UserViewModel _userViewModel)
     {
         this.userViewModel=_userViewModel;
+
     }
 
     @Override
@@ -35,11 +44,12 @@ public class ProfileFragment extends Fragment {
         RelativeLayout btnaddBook = view.findViewById(R.id.btnaddbook);
         RelativeLayout btnlibrary = view.findViewById(R.id.btnaddlibrary);
         ImageView btnupdateprofile = view.findViewById(R.id.btnupdateprofile);
+        logoutbutton = view.findViewById(R.id.logoutbutton);
         final ImageView imgUserphoto = view.findViewById(R.id.imgUserphoto);
 
-        TextView textViewNameSurname =view.findViewById(R.id.tv_name);
-        TextView txtemail =view.findViewById(R.id.txtemail);
-        TextView txtadsoyad =view.findViewById(R.id.txtadsoyad);
+        textViewNameSurname =view.findViewById(R.id.tv_name);
+         txtemail =view.findViewById(R.id.txtemail);
+         txtadsoyad =view.findViewById(R.id.txtadsoyad);
 
         txtadsoyad.setText(userViewModel.getName()+" "+userViewModel.getSurName());
         txtemail.setText(userViewModel.getEmail());
@@ -67,18 +77,53 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), BookListActivity.class);
-                intent.putExtra("userId","287ec72b-05ac-4fcf-1c90-08d91304fd91");
+                intent.putExtra("userId",userViewModel.getId());
                 startActivity(intent);
             }
         });
         btnupdateprofile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent intent = new Intent(getActivity(), UserProfileUpdateActivity.class);
-                intent.putExtra("userId","287ec72b-05ac-4fcf-1c90-08d91304fd91");
-                startActivity(intent);
+                intent.putExtra("userId",userViewModel.getId());
+                startActivityForResult(intent, LAUNCH_SECOND_ACTIVITY);
+            }
+        });
+
+        logoutbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sharedPref = getActivity().getSharedPreferences("sharedPref", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPref.edit();
+                editor.remove("userId");
+                editor.commit();
+
+                Intent i = new Intent(getActivity(), LoginActivity.class);
+                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(i);
             }
         });
         return view;
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == LAUNCH_SECOND_ACTIVITY) {
+            if(resultCode == Activity.RESULT_OK){
+                String result=data.getStringExtra("result");
+                UserViewModel userModel = (UserViewModel) data.getSerializableExtra("userModel");
+
+                textViewNameSurname.setText(userModel.getName()+" "+userModel.getSurName());
+                txtemail.setText(userModel.getEmail());
+                txtadsoyad.setText(userModel.getName()+" "+userModel.getSurName());
+            }
+            if (resultCode == Activity.RESULT_CANCELED) {
+                // Write your code if there's no result
+            }
+        }
     }
 }

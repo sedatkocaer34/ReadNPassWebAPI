@@ -98,7 +98,8 @@ public class UserBookAdapter extends RecyclerView.Adapter<UserBookAdapter.ViewHo
                             public void onResponse(Call<BaseResponse<Boolean>> call, Response<BaseResponse<Boolean>> response) {
                                 if(response.body().isSuccess())
                                 {
-
+                                    home_list.remove(home_list.get(position));
+                                    notifyDataSetChanged();
                                 }
                                 else
                                 {

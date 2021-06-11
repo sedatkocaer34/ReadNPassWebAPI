@@ -64,8 +64,8 @@ public class RegisterActivity extends AppCompatActivity {
     public void onRegisterClick(View view){
         showLoading();
         final UserViewModel userViewModel =new UserViewModel(editTextName.getText().toString(),
-                editTextSurName.getText().toString(),editTextEmail.getText().toString(),
-                editTextPassword.getText().toString(),"00",0,0);
+                editTextSurName.getText().toString(),editTextPassword.getText().toString(),
+                editTextEmail.getText().toString(),"00",0,0);
         Call<BaseResponse<UserViewModel>> call =  restService.AddUser(userViewModel);
         call.enqueue(new Callback<BaseResponse<UserViewModel>>() {
             @Override

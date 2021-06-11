@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ReadNPassWebAPI.Domain.Entity;
+using System;
 using System.Linq;
 
 namespace ReadNPassWebAPI.Data.SystemDataContext
@@ -21,7 +22,7 @@ namespace ReadNPassWebAPI.Data.SystemDataContext
         {
             //OKA Url = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=master;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"
             //Sedat Url = @"Data Source=DESKTOP-BQP1I0E;Initial Catalog=ReadNPassDataBase;Integrated Security=true;"
-            optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-BQP1I0E;Initial Catalog=ReadNPassDataBase;Integrated Security=true;");
+            optionsBuilder.UseSqlServer(@"Data Source=3662884101514\SQLEXPRESS;Initial Catalog=ReadNPassDataBase;Integrated Security=true;");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -38,7 +39,28 @@ namespace ReadNPassWebAPI.Data.SystemDataContext
             modelBuilder.Entity<Book>()
                .HasMany<BookPhoto>(c => c.BookPhotos)
                .WithOne(x => x.Book).OnDelete(DeleteBehavior.Cascade);
-              
+
+            Guid userId = Guid.NewGuid();
+            modelBuilder.Entity<User>().HasData(new User
+            {
+                Id = userId,
+                Name = "sedat",
+                SurName="Kocer",
+                Email= "sk@hotmail.com",
+                Password="saassdasasasdasd",
+                DefaultUserProfiePhoto="asdasd",
+                LocationLatidute=0,
+                LongitudeLatidute=0
+
+            });
+
+            modelBuilder.Entity<UserLibrary>().HasData(new UserLibrary 
+            { 
+              Id= Guid.Parse("287ec72b-05ac-4fcf-1c90-08d91304fd81"),
+              LibraryName="sedat",
+              UserId= userId
+            });
+
         }
 
 

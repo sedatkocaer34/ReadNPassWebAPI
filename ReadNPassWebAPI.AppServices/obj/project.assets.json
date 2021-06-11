@@ -7733,25 +7733,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\sedat\\.nuget\\packages\\": {},
+    "C:\\Users\\Admin\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sedat\\source\\repos\\ReadNPassWebAPI\\ReadNPassWebAPI.AppServices\\ReadNPassWebAPI.AppServices.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\okul\\ReadNPassWebAPI\\ReadNPassWebAPI.AppServices\\ReadNPassWebAPI.AppServices.csproj",
       "projectName": "ReadNPassWebAPI.AppServices",
-      "projectPath": "C:\\Users\\sedat\\source\\repos\\ReadNPassWebAPI\\ReadNPassWebAPI.AppServices\\ReadNPassWebAPI.AppServices.csproj",
-      "packagesPath": "C:\\Users\\sedat\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sedat\\source\\repos\\ReadNPassWebAPI\\ReadNPassWebAPI.AppServices\\obj\\",
+      "projectPath": "C:\\Users\\Admin\\Desktop\\okul\\ReadNPassWebAPI\\ReadNPassWebAPI.AppServices\\ReadNPassWebAPI.AppServices.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Admin\\Desktop\\okul\\ReadNPassWebAPI\\ReadNPassWebAPI.AppServices\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\sedat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
@@ -7767,14 +7767,14 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\sedat\\source\\repos\\ReadNPassWebAPI\\ReadNPassWebAPI.Core\\ReadNPassWebAPI.Core.csproj": {
-              "projectPath": "C:\\Users\\sedat\\source\\repos\\ReadNPassWebAPI\\ReadNPassWebAPI.Core\\ReadNPassWebAPI.Core.csproj"
+            "C:\\Users\\Admin\\Desktop\\okul\\ReadNPassWebAPI\\ReadNPassWebAPI.Core\\ReadNPassWebAPI.Core.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\okul\\ReadNPassWebAPI\\ReadNPassWebAPI.Core\\ReadNPassWebAPI.Core.csproj"
             },
-            "C:\\Users\\sedat\\source\\repos\\ReadNPassWebAPI\\ReadNPassWebAPI.Data\\ReadNPassWebAPI.Data.csproj": {
-              "projectPath": "C:\\Users\\sedat\\source\\repos\\ReadNPassWebAPI\\ReadNPassWebAPI.Data\\ReadNPassWebAPI.Data.csproj"
+            "C:\\Users\\Admin\\Desktop\\okul\\ReadNPassWebAPI\\ReadNPassWebAPI.Data\\ReadNPassWebAPI.Data.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\okul\\ReadNPassWebAPI\\ReadNPassWebAPI.Data\\ReadNPassWebAPI.Data.csproj"
             },
-            "C:\\Users\\sedat\\source\\repos\\ReadNPassWebAPI\\ReadNPassWebAPI.Domain\\ReadNPassWebAPI.Domain.csproj": {
-              "projectPath": "C:\\Users\\sedat\\source\\repos\\ReadNPassWebAPI\\ReadNPassWebAPI.Domain\\ReadNPassWebAPI.Domain.csproj"
+            "C:\\Users\\Admin\\Desktop\\okul\\ReadNPassWebAPI\\ReadNPassWebAPI.Domain\\ReadNPassWebAPI.Domain.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\okul\\ReadNPassWebAPI\\ReadNPassWebAPI.Domain\\ReadNPassWebAPI.Domain.csproj"
             }
           }
         }
@@ -7813,7 +7813,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.204\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }

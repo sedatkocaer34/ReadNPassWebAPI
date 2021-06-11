@@ -94,7 +94,7 @@ public class SendMessageAdapter  extends RecyclerView.Adapter<SendMessageAdapter
             mView = itemView;
             kullaniciadi = mView.findViewById(R.id.kullaniciadi);
             kitapisim = mView.findViewById(R.id.kitapisim);
-            aciklama = mView.findViewById(R.id.aciklama);
+            aciklama = mView.findViewById(R.id.desc);
             teklifturu = mView.findViewById(R.id.teklifturutitle);
             userphoto = mView.findViewById(R.id.bookphoto);
         }

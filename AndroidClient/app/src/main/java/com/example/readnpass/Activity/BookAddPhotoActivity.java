@@ -60,6 +60,7 @@ public class BookAddPhotoActivity extends AppCompatActivity {
     private final int REQUEST_CODE_PERMISSIONS  = 1;
     private final int REQUEST_CODE_READ_STORAGE = 2;
     Context context = this;
+    ProgressBar   pgsBar ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,6 +68,8 @@ public class BookAddPhotoActivity extends AppCompatActivity {
         bookViewModel = (BookViewModel) getIntent().getSerializableExtra("bookViewModel");
         gridView = (GridView) findViewById(R.id.grid_view);
         mProgressBar = findViewById(R.id.progressBar);
+        pgsBar = (ProgressBar) findViewById(R.id.progress_loader);
+        pgsBar.setVisibility(View.GONE);
         btnChoose = findViewById(R.id.btnChoose);
         restService = ApiClient.getClient().create(IRestService.class);
         btnChoose.setOnClickListener(new View.OnClickListener() {
@@ -85,6 +88,7 @@ public class BookAddPhotoActivity extends AppCompatActivity {
 
     public void onAddBookClick(View view)
     {
+        showLoading();
        List<MultipartBody.Part> bookPhotoViewModel = new ArrayList<>();
         if (arrayList != null) {
             // create part for file (photo, video, ...)
@@ -100,6 +104,7 @@ public class BookAddPhotoActivity extends AppCompatActivity {
                 Log.i("countdata", "onAddBookClick: "+response.body().isSuccess());
                 if(response.body().isSuccess())
                 {
+                    hideLoading();
                     Intent intent  = new Intent(context,SuccesActivity.class);
                     startActivity(intent);
                     finish();
@@ -110,6 +115,8 @@ public class BookAddPhotoActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<BaseResponse<BookViewModel>> call, Throwable t) {
                 Log.i("bookhata", "onResponse: "+t);
+                Toast.makeText(context, "Hata Yaşandı Tekrar Deneyiniz", Toast.LENGTH_SHORT).show();
+                hideLoading();
             }
         });
     }
@@ -258,5 +265,15 @@ public class BookAddPhotoActivity extends AppCompatActivity {
 
         // MultipartBody.Part is used to send also the actual file name
         return MultipartBody.Part.createFormData(partName, file.getName(), requestFile);
+    }
+
+    private  void hideLoading()
+    {
+        pgsBar.setVisibility(View.GONE);
+    }
+
+    private  void showLoading()
+    {
+        pgsBar.setVisibility(View.VISIBLE);
     }
 }

@@ -11,8 +11,8 @@ namespace ReadNPassWebAPI.Domain.Entity
         public string SurName { get;  set; }
         public string Email { get;  set; }
         public string Password { get; set; }
-        public double LocationLatidute  { get; private set; }
-        public double LongitudeLatidute { get; private set; }
+        public double LocationLatidute  { get;  set; }
+        public double LongitudeLatidute { get;  set; }
         public string DefaultUserProfiePhoto { get; set; }
 
       virtual  public  List<UserLibrary> UserLibraries { get; set; }

@@ -36,18 +36,22 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
         sharedPref = this.getSharedPreferences("sharedPref",Context.MODE_PRIVATE);
-        restService = ApiClient.getClient().create(IRestService.class);
-        pgsBar = (ProgressBar) findViewById(R.id.progress_loader);
-        editTextemnail =  findViewById(R.id.editTextEmail);
-        pgsBar.setVisibility(View.GONE);
-        if(Build.VERSION.SDK_INT>= Build.VERSION_CODES.M){
-            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
-        }
         if(sharedPref.getString("userId",null)!=null)
         {
             getuser();
+        }
+        else
+        {
+            setContentView(R.layout.activity_login);
+
+            restService = ApiClient.getClient().create(IRestService.class);
+            pgsBar = (ProgressBar) findViewById(R.id.progress_loader);
+            editTextemnail =  findViewById(R.id.editTextEmail);
+            pgsBar.setVisibility(View.GONE);
+            if(Build.VERSION.SDK_INT>= Build.VERSION_CODES.M){
+                getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+            }
         }
 
     }
@@ -59,7 +63,7 @@ public class LoginActivity extends AppCompatActivity {
     public void loginUser(View View){
         showLoading();
 
-        Call<BaseResponse<UserViewModel>> call =  restService.Login(new LoginViewModel(editTextemnail.getText().toString(),""));
+        Call<BaseResponse<UserViewModel>> call =  restService.Login(new LoginViewModel(editTextemnail.getText().toString(),"123123"));
         call.enqueue(new Callback<BaseResponse<UserViewModel>>() {
             @Override
             public void onResponse(Call<BaseResponse<UserViewModel>> call, Response<BaseResponse<UserViewModel>> response) {

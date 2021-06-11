@@ -44,7 +44,7 @@ public interface IRestService
     Call<BaseResponse<UserViewModel>> DeleteUser(UserViewModel userViewModel);
 
     @Headers({"Content-Type: application/json"})
-    @POST("/api/bookClaim/login")
+    @POST("/api/user/login")
     Call<BaseResponse<UserViewModel>> Login(@Body LoginViewModel loginViewModel);
 
 
