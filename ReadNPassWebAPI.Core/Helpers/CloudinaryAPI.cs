@@ -12,9 +12,9 @@ namespace ReadNPassWebAPI.Core.Helpers
     public class CloudinaryAPI : ICloudinaryAPI
     {
                     
-        public const string CLOUD_NAME = "drnw4orq5";
-        public const string API_KEY = "222925767585942";
-        public const string API_SECRET = "3GDuejgar_03zifm7oWChx5hG14";
+        public const string CLOUD_NAME = "";
+        public const string API_KEY = "";
+        public const string API_SECRET = "";
         public static Cloudinary cloudinary;
         public CloudinaryAPI()
         {
